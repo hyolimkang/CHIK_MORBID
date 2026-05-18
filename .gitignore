@@ -1,0 +1,42 @@
+# ---- R / RStudio ----
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj.user
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Large data (regenerate via 02_Script/) ----
+**/*.RData
+
+# Raw SINAN zips: large (~30MB), excluded from git; download via fetch script
+CHIK_MORBID/01_Data/sinan_chik_csv/
+
+# Processed individual / panel files: regenerable
+CHIK_MORBID/01_Data/chik_sinan_individual_*.rds
+CHIK_MORBID/01_Data/chik_sinan_individual_*.csv
+CHIK_MORBID/01_Data/chik_brazil_muni_*.csv
+CHIK_MORBID/01_Data/chik_brazil_muni_*.rds
+CHIK_MORBID/01_Data/ibge_pop_muni_year_*.csv
+CHIK_MORBID/01_Data/ibge_pop_muni_year_*.rds
+
+# PNS / VIGITEL / AEFI raw downloads (large, regenerable)
+CHIK_MORBID/01_Data/pns_*/
+CHIK_MORBID/01_Data/vigitel_*/
+CHIK_MORBID/01_Data/aefi_*/
+
+# Generic large binary / model outputs
+CHIK_MORBID/01_Data/*.tif
+CHIK_MORBID/01_Data/*.zip
+CHIK_MORBID/03_Output/cache/
+
+# ---- Keep on GitHub (whitelisted) ----
+# CHIK_MORBID/02_Script/*.R
+# CHIK_MORBID/01_Data/sinan_chik_docs/
+# CHIK_MORBID/03_Output/figures/
+# CHIK_MORBID/03_Output/tables/
+# CHIK_MORBID/CHIK_MORBID.Rproj
+# README.md
