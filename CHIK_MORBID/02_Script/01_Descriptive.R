@@ -1,3 +1,4 @@
+library(splines)
 ind <- readRDS("01_Data/chik_sinan_individual_2015_2024.rds")
 
 # 1. 전체 구조
@@ -183,7 +184,7 @@ ggplot(summary_df,
 
 
 wide <- summary_df |>
-  select(age_clin, has_any_comorbidity, pct_hosp, pct_death) |>
+  dplyr::select(age_clin, has_any_comorbidity, pct_hosp, pct_death) |>
   pivot_wider(
     names_from = has_any_comorbidity,
     values_from = c(pct_hosp, pct_death)
@@ -194,7 +195,7 @@ rd_df <- wide |>
     rd_hosp = pct_hosp_yes - pct_hosp_no,
     rd_death = pct_death_yes - pct_death_no
   )|>
-  select(age_clin, rd_hosp, rd_death) |>
+  dplyr::select(age_clin, rd_hosp, rd_death) |>
   pivot_longer(
     cols = starts_with("rd_"),
     names_to = "outcome",
@@ -304,7 +305,7 @@ burden_age <- burden_base |>
                             n_cases = "Cases", n_hosp = "Hospitalisations", n_death = "Deaths"),
     outcome = factor(outcome, levels = c("Cases", "Hospitalisations", "Deaths"))
   ) |>
-  group_by(age_clin, outcome) |>                          # 어느 두 변수가 분모 그룹?
+  group_by(age_clin, outcome) |>                         
   mutate(pct = n / sum(n) * 100) |>
   ungroup()
 
