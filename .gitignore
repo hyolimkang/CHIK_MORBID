@@ -4,6 +4,7 @@
 .RData
 .Ruserdata
 *.Rproj.user
+Rplots.pdf
 
 # ---- OS ----
 .DS_Store
@@ -32,6 +33,11 @@ CHIK_MORBID/01_Data/aefi_*/
 CHIK_MORBID/01_Data/*.tif
 CHIK_MORBID/01_Data/*.zip
 CHIK_MORBID/03_Output/cache/
+
+# Archived / orphaned data (superseded, regenerable, kept locally only)
+CHIK_MORBID/01_Data/archive/
+CHIK_MORBID/01_Data/descriptive_appendix/*.rds
+CHIK_MORBID/01_Data/descriptive_appendix/*.csv
 
 # ---- Keep on GitHub (whitelisted) ----
 # CHIK_MORBID/02_Script/*.R
