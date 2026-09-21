@@ -10,13 +10,17 @@ Last updated: 2026-09 (repo restructuring session)
 
 ## 0. Big picture
 
-This repo contains **two independent branches** of analysis.
+This repo contains **three independent branches** of analysis.
 
 1. **Main pipeline** (sections 1-8 below) — computes relative risk (RR) of severe outcomes
    by comorbidity count and by individual comorbidity from SINAN individual-level data,
    then combines it with GBD/IHME background comorbidity prevalence to estimate
    country-level population morbidity burden.
-2. **`descriptive_appendix/descriptive.R`** — a fully independent descriptive-analysis
+2. **`12_core3_condition_specific_rr.R`** (section 3a below) — a separate cohort/model
+   built around only the three "core" conditions (DM/HTN/CKD), with mutually-adjusted
+   condition-specific RR. Reads `01_Data/chik_sinan_individual_2015_2024.rds` directly;
+   does not depend on `analysis_df` from 03, and nothing downstream depends on it.
+3. **`descriptive_appendix/descriptive.R`** — a fully independent descriptive-analysis
    script. It re-reads the raw SINAN CSVs itself and builds its own cache
    (`01_Data/descriptive_appendix/chik_analytic.rds`). It does not depend on, and is not
    depended on by, the main pipeline's `analysis_df` or RR results. Run separately, only
@@ -59,6 +63,9 @@ source("02_Script/10_background_burden_graphs.R")   # visualises 04/07/08's back
 # ---- Side analyses, any time after 03, not part of the sequence above ----
 source("02_Script/side_analyses/table_basic.R")             # Table 1 (currently broken - see section 6)
 source("02_Script/side_analyses/hosp_rate_validation.R")    # observed hospitalisation rate vs model prediction
+
+# ---- Independent branch: core-3 condition-specific RR, any time, standalone ----
+source("02_Script/12_core3_condition_specific_rr.R")        # DM/HTN/CKD-only cohort, mutually-adjusted RR
 ```
 
 ---
@@ -122,6 +129,62 @@ but never written to disk (`p_hosp_absolute_risk`, `p_death_absolute_risk`, `p_r
 to `03_Output/figures/fig_absolute_risk_hosp.jpg`, `fig_absolute_risk_death.jpg`,
 `fig_rr_hosp_gam.jpg`, `fig_rr_death_gam.jpg`, `fig_rr_hosp_by_comorb.jpg`, and
 `fig_rr_death_by_comorb.jpg`.
+
+---
+
+## 3a. Core-3 condition-specific RR — `12_core3_condition_specific_rr.R`
+
+Added 2026-09. A deliberately separate cohort/model from `analysis_df` above, built to
+answer one specific question cleanly: *"how much higher is the risk of hospitalisation
+(or death) for someone with diabetes, after accounting for hypertension and CKD?"* — and
+the same for hypertension and CKD in turn.
+
+Why it's separate rather than a change to `analysis_df`/section 3 above: `analysis_df`
+requires all 7 comorbidity fields to be known (complete-case on all 7), and its RR
+comparisons (comorbidity count, or one condition at a time with no adjustment for the
+others) are not what this question needs. Also, `05_corr_matrix.R` and everything after it
+depends on `analysis_df` keeping its current (7-condition, hosp-cohort-only) shape, so it
+was not safe to redefine it in place.
+
+What it does differently from `analysis_df`:
+1. **Cohort**: complete-case filtering applies only to the 3 core conditions - diabetes
+   (`dm`), hypertension (`htn`), and `renal_disease` as a CKD proxy (`ckd`). Unknown
+   hepatopathy/hematologic/peptic_ulcer/autoimmune status no longer excludes a record, and
+   having one of those 4 conditions is not an exclusion either - e.g. a diabetes + liver
+   disease patient is kept and still coded `dm = 1`. Those 4 fields play no role anywhere
+   in this script.
+2. **Two cohorts, not one**: `hosp_cohort` (needs `hospitalised` known) and `death_cohort`
+   (needs `died_from_chik` known) are built independently, each only constrained by its
+   own outcome - unlike `analysis_df`, which requires `hospitalised` known even to fit the
+   death model.
+3. **One mutually-adjusted model per outcome** (`fit_hosp_core3`, `fit_death_core3`):
+   `outcome ~ ns(age, df=4) + sex + dm + htn + ckd`, main effects only, so each
+   condition's estimate is adjusted for the other two.
+4. **Standardised RR, not just OR**: a logistic model's coefficients give an adjusted odds
+   ratio, so `standardised_rr()` additionally computes a population-standardised RR by
+   g-computation (predict every record's risk with the condition forced present vs forced
+   absent, keep everything else as observed, ratio the two population-average risks), with
+   95% CIs from a parametric coefficient bootstrap (`MASS::mvrnorm`, 2000 draws) - the same
+   style of bootstrap `03_relative_risk.R` uses for its GAM-based RR. The forced-present/
+   forced-absent predictions are computed once per unique `(age_years, sex, dm, htn, ckd)`
+   combination (not once per record) - since the model has no interactions among these,
+   that gives an identical result to a per-record loop, just far cheaper.
+
+Output: `core3_rr_hosp`, `core3_rr_death` (one row per condition: adjusted OR, standardised
+RR, both with 95% CI, plus crude exposed/unexposed counts), saved to
+`01_Data/core3_rr_hosp.RData` / `01_Data/core3_rr_death.RData`; forest plots at
+`03_Output/figures/fig_core3_rr_hosp.jpg` / `fig_core3_rr_death.jpg`.
+
+The same script also estimates the eight mutually exclusive joint profiles (`None`, DM,
+HTN, CKD, and their combinations) versus `None`. In addition to the overall result, it
+reports profile RRs separately for `0-19`, `20-39`, `40-59`, `60-79`, and `80+` years.
+Each age-band estimate is standardised over that band's exact-age, sex, year, and residence
+state distribution. As several profile-by-age death cells have very few or zero events, the
+profile-by-age interaction is partially pooled rather than estimated as five unrelated
+models. The age-stratified tables include crude case/event counts and are saved as
+`01_Data/core_profile_rr_hosp_by_age.RData` / `core_profile_rr_death_by_age.RData`, with
+forest plots at `03_Output/figures/fig_core_profile_rr_hosp_by_age.jpg` /
+`fig_core_profile_rr_death_by_age.jpg`.
 
 ---
 
@@ -231,9 +294,10 @@ object a few lines above was `selected_iso3`. Now in `09_copula_result_graphs.R`
 
 | File | Produced by | Consumed by |
 |---|---|---|
-| `chik_sinan_individual_2015_2024.rds` | 02 | 03 (and, via 03, side_analyses/ and 05) |
+| `chik_sinan_individual_2015_2024.rds` | 02 | 03 (and, via 03, side_analyses/ and 05); also read directly by 12 |
 | `gbd_pop.csv`, `gbd_prevalence.csv`, `ncd_hypertension.csv` | (external download, no script) | 04 |
 | `rr_hosp_model.RData`, `rr_death_model.RData` | 03 | (not yet re-read by anything — intended to be combined with 08's output later) |
+| `core3_rr_hosp.RData`, `core3_rr_death.RData` | 12 | (none yet — standalone branch, see section 3a) |
 | `brazil_observed_hosp_by_age.rds` | `side_analyses/hosp_rate_validation.R` | (none, validation output only) |
 | `bg_count_dist_wide.RData`, `bg_exclusive_dist.RData` | 08 | 09, 10 |
 | `01_Data/archive/*`, `01_Data/descriptive_appendix/*` | see section 7 | — |
