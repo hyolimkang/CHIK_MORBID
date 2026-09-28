@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' width='538.58pt' height='362.83pt' viewBox='0 0 538.58 362.83'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+    .svglite text {
+      white-space: pre;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw1MzguNTh8MC4wMHwzNjIuODM='>
+    <rect x='0.00' y='0.00' width='538.58' height='362.83' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw1MzguNTh8MC4wMHwzNjIuODM=)'>
+<rect x='0.00' y='0.000000000000057' width='538.58' height='362.83' style='stroke-width: 0.75; stroke: none; fill: #FFFFFF;' />
+<rect x='16.16' y='27.21' width='88.09' height='28.30' style='stroke-width: 0.38; stroke: none; fill: #EDF0F2;' />
+<text x='21.54' y='44.29' style='font-size: 8.20px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='38.21px' lengthAdjust='spacingAndGlyphs'>Condition</text>
+<rect x='104.25' y='27.21' width='63.79' height='28.30' style='stroke-width: 0.38; stroke: none; fill: #EDF0F2;' />
+<text x='136.14' y='39.67' text-anchor='middle' style='font-size: 8.20px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='58.69px' lengthAdjust='spacingAndGlyphs'>Hospitalisation</text>
+<text x='136.14' y='48.92' text-anchor='middle' style='font-size: 8.20px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='35.04px' lengthAdjust='spacingAndGlyphs'>evidence</text>
+<rect x='168.04' y='27.21' width='63.79' height='28.30' style='stroke-width: 0.38; stroke: none; fill: #EDF0F2;' />
+<text x='199.93' y='39.67' text-anchor='middle' style='font-size: 8.20px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='50.50px' lengthAdjust='spacingAndGlyphs'>Severe / fatal</text>
+<text x='199.93' y='48.92' text-anchor='middle' style='font-size: 8.20px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='35.04px' lengthAdjust='spacingAndGlyphs'>evidence</text>
+<rect x='231.83' y='27.21' width='65.81' height='28.30' style='stroke-width: 0.38; stroke: none; fill: #EDF0F2;' />
+<text x='264.73' y='39.67' text-anchor='middle' style='font-size: 8.20px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='33.67px' lengthAdjust='spacingAndGlyphs'>Analysis</text>
+<text x='264.73' y='48.92' text-anchor='middle' style='font-size: 8.20px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='15.01px' lengthAdjust='spacingAndGlyphs'>role</text>
+<rect x='297.64' y='27.21' width='53.16' height='28.30' style='stroke-width: 0.38; stroke: none; fill: #EDF0F2;' />
+<text x='324.22' y='39.67' text-anchor='middle' style='font-size: 8.20px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='35.94px' lengthAdjust='spacingAndGlyphs'>Evidence</text>
+<text x='324.22' y='48.92' text-anchor='middle' style='font-size: 8.20px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='15.01px' lengthAdjust='spacingAndGlyphs'>refs</text>
+<rect x='350.80' y='27.21' width='171.62' height='28.30' style='stroke-width: 0.38; stroke: none; fill: #EDF0F2;' />
+<text x='356.19' y='44.29' style='font-size: 8.20px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='51.41px' lengthAdjust='spacingAndGlyphs'>Key rationale</text>
+<rect x='16.16' y='55.51' width='88.09' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='231.83' y='55.51' width='65.81' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='297.64' y='55.51' width='53.16' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='350.80' y='55.51' width='171.62' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='104.25' y='55.51' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #7FA08F; fill: #DDEDE5;' />
+<rect x='168.04' y='55.51' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #7FA08F; fill: #DDEDE5;' />
+<text x='21.54' y='74.25' style='font-size: 8.00px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='33.35px' lengthAdjust='spacingAndGlyphs'>Diabetes</text>
+<text x='136.14' y='74.11' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #2F6654; font-family: "Arial";' textLength='37.97px' lengthAdjust='spacingAndGlyphs'>Supported</text>
+<text x='199.93' y='74.11' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #2F6654; font-family: "Arial";' textLength='37.97px' lengthAdjust='spacingAndGlyphs'>Supported</text>
+<text x='264.73' y='73.93' text-anchor='middle' style='font-size: 7.10px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='20.48px' lengthAdjust='spacingAndGlyphs'>CORE</text>
+<text x='324.22' y='69.73' text-anchor='middle' style='font-size: 7.20px;fill: #5F6B71; font-family: "Arial";' textLength='24.75px' lengthAdjust='spacingAndGlyphs'>A, B, D,</text>
+<text x='324.22' y='78.20' text-anchor='middle' style='font-size: 7.20px;fill: #5F6B71; font-family: "Arial";' textLength='21.95px' lengthAdjust='spacingAndGlyphs'>E, F, G</text>
+<text x='356.19' y='69.66' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='71.78px' lengthAdjust='spacingAndGlyphs'>Consistent signals for</text>
+<text x='356.19' y='78.48' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='92.66px' lengthAdjust='spacingAndGlyphs'>hospitalisation and mortality</text>
+<rect x='16.16' y='87.26' width='88.09' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='231.83' y='87.26' width='65.81' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='297.64' y='87.26' width='53.16' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='350.80' y='87.26' width='171.62' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='104.25' y='87.26' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #7FA08F; fill: #DDEDE5;' />
+<rect x='168.04' y='87.26' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #C5A25E; fill: #F4E8C8;' />
+<text x='21.54' y='106.00' style='font-size: 8.00px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='51.13px' lengthAdjust='spacingAndGlyphs'>Hypertension</text>
+<text x='136.14' y='105.85' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #2F6654; font-family: "Arial";' textLength='37.97px' lengthAdjust='spacingAndGlyphs'>Supported</text>
+<text x='199.93' y='105.85' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #7C5A1C; font-family: "Arial";' textLength='27.00px' lengthAdjust='spacingAndGlyphs'>Limited</text>
+<text x='264.73' y='105.67' text-anchor='middle' style='font-size: 7.10px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='20.48px' lengthAdjust='spacingAndGlyphs'>CORE</text>
+<text x='324.22' y='101.48' text-anchor='middle' style='font-size: 7.20px;fill: #5F6B71; font-family: "Arial";' textLength='24.75px' lengthAdjust='spacingAndGlyphs'>A, B, C,</text>
+<text x='324.22' y='109.94' text-anchor='middle' style='font-size: 7.20px;fill: #5F6B71; font-family: "Arial";' textLength='13.98px' lengthAdjust='spacingAndGlyphs'>D, E</text>
+<text x='356.19' y='101.41' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='95.59px' lengthAdjust='spacingAndGlyphs'>Strong hospitalisation signal;</text>
+<text x='356.19' y='110.23' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='94.74px' lengthAdjust='spacingAndGlyphs'>limited severe/fatal evidence</text>
+<rect x='16.16' y='119.01' width='88.09' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='231.83' y='119.01' width='65.81' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='297.64' y='119.01' width='53.16' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='350.80' y='119.01' width='171.62' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='104.25' y='119.01' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #7FA08F; fill: #DDEDE5;' />
+<rect x='168.04' y='119.01' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #7FA08F; fill: #DDEDE5;' />
+<text x='21.54' y='133.09' style='font-size: 8.00px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='57.80px' lengthAdjust='spacingAndGlyphs'>Chronic kidney</text>
+<text x='21.54' y='142.41' style='font-size: 8.00px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='29.36px' lengthAdjust='spacingAndGlyphs'>disease</text>
+<text x='136.14' y='137.60' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #2F6654; font-family: "Arial";' textLength='37.97px' lengthAdjust='spacingAndGlyphs'>Supported</text>
+<text x='199.93' y='137.60' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #2F6654; font-family: "Arial";' textLength='37.97px' lengthAdjust='spacingAndGlyphs'>Supported</text>
+<text x='264.73' y='137.42' text-anchor='middle' style='font-size: 7.10px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='20.48px' lengthAdjust='spacingAndGlyphs'>CORE</text>
+<text x='324.22' y='133.22' text-anchor='middle' style='font-size: 7.20px;fill: #5F6B71; font-family: "Arial";' textLength='24.75px' lengthAdjust='spacingAndGlyphs'>A, B, D,</text>
+<text x='324.22' y='141.69' text-anchor='middle' style='font-size: 7.20px;fill: #5F6B71; font-family: "Arial";' textLength='14.37px' lengthAdjust='spacingAndGlyphs'>E, G</text>
+<text x='356.19' y='133.16' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='94.74px' lengthAdjust='spacingAndGlyphs'>Largest risk signal; evidence</text>
+<text x='356.19' y='141.98' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='59.24px' lengthAdjust='spacingAndGlyphs'>chiefly from Brazil</text>
+<rect x='16.16' y='150.76' width='88.09' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='231.83' y='150.76' width='65.81' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='297.64' y='150.76' width='53.16' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='350.80' y='150.76' width='171.62' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='104.25' y='150.76' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #BE8585; fill: #F4DEDE;' />
+<rect x='168.04' y='150.76' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #C5A25E; fill: #F4E8C8;' />
+<text x='21.54' y='164.84' style='font-size: 8.00px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='55.16px' lengthAdjust='spacingAndGlyphs'>Liver disease /</text>
+<text x='21.54' y='174.15' style='font-size: 8.00px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='47.57px' lengthAdjust='spacingAndGlyphs'>hepatopathy</text>
+<text x='136.14' y='169.35' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #7B4242; font-family: "Arial";' textLength='40.50px' lengthAdjust='spacingAndGlyphs'>Insufficient</text>
+<text x='199.93' y='169.35' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #7C5A1C; font-family: "Arial";' textLength='27.00px' lengthAdjust='spacingAndGlyphs'>Limited</text>
+<text x='264.73' y='169.17' text-anchor='middle' style='font-size: 7.10px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='45.04px' lengthAdjust='spacingAndGlyphs'>SECONDARY</text>
+<text x='324.22' y='169.21' text-anchor='middle' style='font-size: 7.20px;fill: #5F6B71; font-family: "Arial";' textLength='4.80px' lengthAdjust='spacingAndGlyphs'>E</text>
+<text x='356.19' y='164.91' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='100.58px' lengthAdjust='spacingAndGlyphs'>Outcome-specific death signal</text>
+<text x='356.19' y='173.73' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='81.83px' lengthAdjust='spacingAndGlyphs'>in Brazilian national data</text>
+<rect x='16.16' y='182.51' width='88.09' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='231.83' y='182.51' width='65.81' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='297.64' y='182.51' width='53.16' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='350.80' y='182.51' width='171.62' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='104.25' y='182.51' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #C5A25E; fill: #F4E8C8;' />
+<rect x='168.04' y='182.51' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #BE8585; fill: #F4DEDE;' />
+<text x='21.54' y='201.25' style='font-size: 8.00px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='80.48px' lengthAdjust='spacingAndGlyphs'>Autoimmune disease</text>
+<text x='136.14' y='201.10' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #7C5A1C; font-family: "Arial";' textLength='27.00px' lengthAdjust='spacingAndGlyphs'>Limited</text>
+<text x='199.93' y='201.10' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #7B4242; font-family: "Arial";' textLength='40.50px' lengthAdjust='spacingAndGlyphs'>Insufficient</text>
+<text x='264.73' y='200.92' text-anchor='middle' style='font-size: 7.10px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='45.04px' lengthAdjust='spacingAndGlyphs'>SECONDARY</text>
+<text x='324.22' y='200.95' text-anchor='middle' style='font-size: 7.20px;fill: #5F6B71; font-family: "Arial";' textLength='4.80px' lengthAdjust='spacingAndGlyphs'>E</text>
+<text x='356.19' y='196.66' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='79.30px' lengthAdjust='spacingAndGlyphs'>Limited association with</text>
+<text x='356.19' y='205.48' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='61.77px' lengthAdjust='spacingAndGlyphs'>hospital admission</text>
+<rect x='16.16' y='214.25' width='88.09' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='231.83' y='214.25' width='65.81' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='297.64' y='214.25' width='53.16' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='350.80' y='214.25' width='171.62' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='104.25' y='214.25' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #BE8585; fill: #F4DEDE;' />
+<rect x='168.04' y='214.25' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #BE8585; fill: #F4DEDE;' />
+<text x='21.54' y='228.34' style='font-size: 8.00px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='52.47px' lengthAdjust='spacingAndGlyphs'>Haematologic</text>
+<text x='21.54' y='237.65' style='font-size: 8.00px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='29.36px' lengthAdjust='spacingAndGlyphs'>disease</text>
+<text x='136.14' y='232.85' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #7B4242; font-family: "Arial";' textLength='40.50px' lengthAdjust='spacingAndGlyphs'>Insufficient</text>
+<text x='199.93' y='232.85' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #7B4242; font-family: "Arial";' textLength='40.50px' lengthAdjust='spacingAndGlyphs'>Insufficient</text>
+<text x='264.73' y='228.62' text-anchor='middle' style='font-size: 7.10px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='14.97px' lengthAdjust='spacingAndGlyphs'>NOT</text>
+<text x='264.73' y='236.71' text-anchor='middle' style='font-size: 7.10px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='45.32px' lengthAdjust='spacingAndGlyphs'>PRIORITISED</text>
+<text x='324.22' y='232.70' text-anchor='middle' style='font-size: 7.20px;fill: #5F6B71; font-family: "Arial";' textLength='5.59px' lengthAdjust='spacingAndGlyphs'>G</text>
+<text x='356.19' y='228.40' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='90.58px' lengthAdjust='spacingAndGlyphs'>Sparse and heterogeneous</text>
+<text x='356.19' y='237.22' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='66.78px' lengthAdjust='spacingAndGlyphs'>prognostic evidence</text>
+<rect x='16.16' y='246.00' width='88.09' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='231.83' y='246.00' width='65.81' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='297.64' y='246.00' width='53.16' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='350.80' y='246.00' width='171.62' height='31.75' style='stroke-width: 0.38; stroke: none; fill: #FFFFFF;' />
+<rect x='104.25' y='246.00' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #BE8585; fill: #F4DEDE;' />
+<rect x='168.04' y='246.00' width='63.79' height='31.75' style='stroke-width: 0.38; stroke: #BE8585; fill: #F4DEDE;' />
+<text x='21.54' y='260.09' style='font-size: 8.00px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='72.93px' lengthAdjust='spacingAndGlyphs'>Peptic / acid-peptic</text>
+<text x='21.54' y='269.40' style='font-size: 8.00px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='29.36px' lengthAdjust='spacingAndGlyphs'>disease</text>
+<text x='136.14' y='264.59' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #7B4242; font-family: "Arial";' textLength='40.50px' lengthAdjust='spacingAndGlyphs'>Insufficient</text>
+<text x='199.93' y='264.59' text-anchor='middle' style='font-size: 7.60px; font-weight: bold;fill: #7B4242; font-family: "Arial";' textLength='40.50px' lengthAdjust='spacingAndGlyphs'>Insufficient</text>
+<text x='264.73' y='260.37' text-anchor='middle' style='font-size: 7.10px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='14.97px' lengthAdjust='spacingAndGlyphs'>NOT</text>
+<text x='264.73' y='268.46' text-anchor='middle' style='font-size: 7.10px; font-weight: bold;fill: #263238; font-family: "Arial";' textLength='45.32px' lengthAdjust='spacingAndGlyphs'>PRIORITISED</text>
+<text x='324.22' y='264.45' text-anchor='middle' style='font-size: 7.20px;fill: #5F6B71; font-family: "Arial";' textLength='5.59px' lengthAdjust='spacingAndGlyphs'>G</text>
+<text x='356.19' y='260.15' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='75.54px' lengthAdjust='spacingAndGlyphs'>Very limited prognostic</text>
+<text x='356.19' y='268.97' style='font-size: 7.50px;fill: #263238; font-family: "Arial";' textLength='30.05px' lengthAdjust='spacingAndGlyphs'>evidence</text>
+<line x1='16.16' y1='277.75' x2='16.16' y2='27.21' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='104.25' y1='277.75' x2='104.25' y2='27.21' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='168.04' y1='277.75' x2='168.04' y2='27.21' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='231.83' y1='277.75' x2='231.83' y2='27.21' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='297.64' y1='277.75' x2='297.64' y2='27.21' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='350.80' y1='277.75' x2='350.80' y2='27.21' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='522.43' y1='277.75' x2='522.43' y2='27.21' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='16.16' y1='27.21' x2='522.43' y2='27.21' style='stroke-width: 0.52; stroke: #B9C3C8; stroke-linecap: butt;' />
+<line x1='16.16' y1='55.51' x2='522.43' y2='55.51' style='stroke-width: 0.52; stroke: #B9C3C8; stroke-linecap: butt;' />
+<line x1='16.16' y1='87.26' x2='522.43' y2='87.26' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='16.16' y1='119.01' x2='522.43' y2='119.01' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='16.16' y1='150.76' x2='522.43' y2='150.76' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='16.16' y1='182.51' x2='522.43' y2='182.51' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='16.16' y1='214.25' x2='522.43' y2='214.25' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='16.16' y1='246.00' x2='522.43' y2='246.00' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='16.16' y1='277.75' x2='522.43' y2='277.75' style='stroke-width: 0.41; stroke: #D2D9DD; stroke-linecap: butt;' />
+<line x1='16.16' y1='304.78' x2='522.43' y2='304.78' style='stroke-width: 0.52; stroke: #B9C3C8; stroke-linecap: butt;' />
+<text x='16.16' y='321.99' style='font-size: 6.50px;fill: #5F6B71; font-family: "Arial";' textLength='503.95px' lengthAdjust='spacingAndGlyphs'>Evidence categories: Supported = consistent evidence of association; Limited = suggestive, outcome-specific, or sparse evidence; Insufficient = little or no prognostic evidence.</text>
+<text x='16.16' y='337.95' style='font-size: 6.50px; font-style: italic;fill: #5F6B71; font-family: "Arial";' textLength='420.18px' lengthAdjust='spacingAndGlyphs'>Operational prioritisation framework informed by a focused review; not a formal GRADE assessment. Evidence references are coded A through G.</text>
+</g>
+</svg>

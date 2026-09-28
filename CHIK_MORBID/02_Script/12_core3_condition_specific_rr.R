@@ -50,17 +50,22 @@
 # coefficients (MASS::mvrnorm), the same approach 03_relative_risk.R uses
 # for its GAM-based RR.
 #
-# Needs: 01_Data/chik_sinan_individual_2015_2024.rds (from
+# Needs: 01_Data/chik_sinan_individual_2015_2025.rds (from
 # 02_clean_chik_sinan_brazil.R) and the packages loaded by 00_setup.R.
 # Runs standalone - does not need 03-11 to have been sourced first, and
 # does not modify or depend on analysis_df from 03.
 #
 # Output:
 #   hosp_cohort, death_cohort              the two cohorts built here
-#   fit_hosp_core3, fit_death_core3        the mutually-adjusted GLMs
+#   fit_hosp_core3, fit_death_core3        the mutually-adjusted GAMs
+#                                          (age/state smooths, sex/year/
+#                                          dm/htn/ckd parametric - same
+#                                          adjustment set as section 8's
+#                                          core_profile models)
 #   core3_rr_hosp, core3_rr_death          adjusted OR + standardised RR per
 #                                          condition, one row each
 #   -> saved: 01_Data/core3_rr_hosp.RData, 01_Data/core3_rr_death.RData
+#   -> table: 03_Output/tables/core3_rr_tables.xlsx (sheets: hosp, death)
 #   -> figures: 03_Output/figures/fig_core3_rr_hosp.jpg,
 #               03_Output/figures/fig_core3_rr_death.jpg
 #   core_profile_rr_hosp_by_age, core_profile_rr_death_by_age
@@ -94,6 +99,9 @@
 
 fig_dir <- "03_Output/figures"
 if (!dir.exists(fig_dir)) dir.create(fig_dir, recursive = TRUE)
+
+table_dir <- "03_Output/tables"
+if (!dir.exists(table_dir)) dir.create(table_dir, recursive = TRUE)
 
 ## Shared publication theme (Nature-style: quiet neutrals, small serif-free
 ## type, minimal chrome). Defined here (rather than down in section 10,
@@ -131,7 +139,7 @@ theme_figure3_nature <- function() {
 ## 1. Load data and build the two core-3 cohorts
 ## ============================================================
 
-ind <- readRDS("01_Data/chik_sinan_individual_2015_2024.rds")
+ind <- readRDS("01_Data/chik_sinan_individual_2015_2025.rds")
 
 core_cols <- c(
   "diabetes",
@@ -257,22 +265,43 @@ message(sprintf(
 ))
 
 ## ============================================================
-## 2. Mutually-adjusted models: dm + htn + ckd + age + sex
+## 2. Mutually-adjusted models: dm + htn + ckd + age + sex + year + state
 ## ============================================================
-## Main effects only - each condition's coefficient is adjusted for the
-## other two, matching the question this script is built to answer
-## ("how much higher is risk for DM, after accounting for HTN and CKD?").
+## Main effects only for dm/htn/ckd - each condition's coefficient is
+## adjusted for the other two, matching the question this script is built
+## to answer ("how much higher is risk for DM, after accounting for HTN and
+## CKD?"). age/sex/year/state are deliberately the SAME adjustment set as
+## the core_profile model in section 8 below (age via s(bs="ts"), state via
+## a random-effect smooth to avoid the zero-death-state separation problem
+## documented there) - the two models are meant to differ only in how
+## dm/htn/ckd enter (additive main effects here vs a free 8-level factor in
+## section 8), not in what else they adjust for.
 
-fit_hosp_core3 <- glm(
-  hosp_only ~ splines::ns(age_years, df = 4) + sex + dm + htn + ckd,
+fit_hosp_core3 <- mgcv::bam(
+  hosp_only ~
+    s(age_years, k = 10, bs = "ts") +
+    sex +
+    year +
+    s(uf_residence, bs = "re") +
+    dm + htn + ckd,
   data = hosp_cohort,
-  family = binomial()
+  family = binomial(link = "logit"),
+  method = "fREML",
+  discrete = TRUE
 )
 
-fit_death_core3 <- glm(
-  death_only ~ splines::ns(age_years, df = 4) + sex + dm + htn + ckd,
+fit_death_core3 <- mgcv::bam(
+  death_only ~
+    s(age_years, k = 10, bs = "ts") +
+    sex +
+    year +
+    s(uf_residence, bs = "re") +
+    dm + htn + ckd,
   data = death_cohort,
-  family = binomial()
+  family = binomial(link = "logit"),
+  method = "fREML",
+  discrete = TRUE,
+  na.action = na.exclude
 )
 
 summary(fit_hosp_core3)
@@ -285,7 +314,7 @@ summary(fit_death_core3)
 get_adjusted_or <- function(fit, exposure_var) {
 
   est <- coef(fit)[[exposure_var]]
-  se  <- sqrt(diag(vcov(fit)))[[exposure_var]]
+  se  <- sqrt(diag(vcov(fit, unconditional = TRUE)))[[exposure_var]]
 
   tibble::tibble(
     condition = exposure_var,
@@ -300,25 +329,30 @@ get_adjusted_or <- function(fit, exposure_var) {
 ##    bootstrap for 95% CIs (MASS::mvrnorm, same approach used for the
 ##    GAM-based RR in 03_relative_risk.R)
 ## ============================================================
-## Because fit_*_core3 has only main effects in age/sex/dm/htn/ckd, the
-## predicted probability for any individual depends only on that 5-tuple -
-## so grouping the cohort into its unique (age_years, sex, dm, htn, ckd)
-## combinations and weighting by how many records share each combination
+## fit_*_core3 has only main effects in dm/htn/ckd, so the predicted
+## probability for any individual depends only on (age_years, sex, year,
+## uf_residence, dm, htn, ckd) - grouping the cohort into its unique
+## combinations of these and weighting by how many records share each one
 ## gives EXACTLY the same population-average risk as looping over every
-## individual, just far cheaper.
+## individual, just far cheaper. Because the model now contains smooth
+## terms (s(age_years), s(uf_residence)), predict(..., type = "lpmatrix")
+## is used instead of model.matrix() - the same reason section 8's
+## standardise_profile_rr() below uses lpmatrix rather than model.matrix().
 
-standardised_rr <- function(fit, data, exposure_var, B = 2000, seed = 1) {
+standardised_rr <- function(
+  fit, data, exposure_var, B = 2000, seed = 1, draw_block_size = 100
+) {
 
   combo <- data |>
-    dplyr::count(age_years, sex, dm, htn, ckd, name = "n")
+    dplyr::count(age_years, sex, year, uf_residence, dm, htn, ckd, name = "n")
 
   combo_exposed   <- combo
   combo_unexposed <- combo
   combo_exposed[[exposure_var]]   <- 1L
   combo_unexposed[[exposure_var]] <- 0L
 
-  X1 <- model.matrix(delete.response(terms(fit)), data = combo_exposed)
-  X0 <- model.matrix(delete.response(terms(fit)), data = combo_unexposed)
+  X1 <- predict(fit, newdata = combo_exposed, type = "lpmatrix")
+  X0 <- predict(fit, newdata = combo_unexposed, type = "lpmatrix")
 
   w <- combo$n
 
@@ -331,14 +365,32 @@ standardised_rr <- function(fit, data, exposure_var, B = 2000, seed = 1) {
   rr_point <- risk_exposed_point / risk_unexposed_point
 
   set.seed(seed)
-  beta_draws <- MASS::mvrnorm(n = B, mu = beta_hat, Sigma = vcov(fit))
+  beta_draws <- MASS::mvrnorm(
+    n = B, mu = beta_hat, Sigma = vcov(fit, unconditional = TRUE)
+  )
 
-  p1_draws <- plogis(X1 %*% t(beta_draws))
-  p0_draws <- plogis(X0 %*% t(beta_draws))
+  ## Process coefficient draws in blocks. Retaining the full
+  ## (standardisation cells x B) prediction matrices can require several GB;
+  ## only the B weighted-average risks are needed for the CIs.
+  risk_exposed_draws   <- numeric(B)
+  risk_unexposed_draws <- numeric(B)
+  weight_sum <- sum(w)
 
-  risk_exposed_draws   <- colSums(sweep(p1_draws, 1, w, FUN = "*")) / sum(w)
-  risk_unexposed_draws <- colSums(sweep(p0_draws, 1, w, FUN = "*")) / sum(w)
+  for (first_draw in seq.int(1, B, by = draw_block_size)) {
+    draw_index <- first_draw:min(first_draw + draw_block_size - 1, B)
+    beta_block <- t(beta_draws[draw_index, , drop = FALSE])
+
+    p1_block <- plogis(X1 %*% beta_block)
+    risk_exposed_draws[draw_index] <- as.numeric(crossprod(w, p1_block)) / weight_sum
+    rm(p1_block)
+
+    p0_block <- plogis(X0 %*% beta_block)
+    risk_unexposed_draws[draw_index] <- as.numeric(crossprod(w, p0_block)) / weight_sum
+    rm(p0_block)
+  }
+
   rr_draws <- risk_exposed_draws / risk_unexposed_draws
+  risk_difference_draws <- risk_exposed_draws - risk_unexposed_draws
 
   tibble::tibble(
     condition                   = exposure_var,
@@ -346,7 +398,26 @@ standardised_rr <- function(fit, data, exposure_var, B = 2000, seed = 1) {
     rr_lower                    = quantile(rr_draws, 0.025, names = FALSE),
     rr_upper                    = quantile(rr_draws, 0.975, names = FALSE),
     standardised_risk_exposed   = risk_exposed_point,
-    standardised_risk_unexposed = risk_unexposed_point
+    standardised_risk_exposed_lower = quantile(
+      risk_exposed_draws, 0.025, names = FALSE
+    ),
+    standardised_risk_exposed_upper = quantile(
+      risk_exposed_draws, 0.975, names = FALSE
+    ),
+    standardised_risk_unexposed = risk_unexposed_point,
+    standardised_risk_unexposed_lower = quantile(
+      risk_unexposed_draws, 0.025, names = FALSE
+    ),
+    standardised_risk_unexposed_upper = quantile(
+      risk_unexposed_draws, 0.975, names = FALSE
+    ),
+    standardised_risk_difference = risk_exposed_point - risk_unexposed_point,
+    standardised_risk_difference_lower = quantile(
+      risk_difference_draws, 0.025, names = FALSE
+    ),
+    standardised_risk_difference_upper = quantile(
+      risk_difference_draws, 0.975, names = FALSE
+    )
   )
 }
 
@@ -425,6 +496,21 @@ print(core3_rr_death)
 save(core3_rr_hosp, file = "01_Data/core3_rr_hosp.RData")
 save(core3_rr_death, file = "01_Data/core3_rr_death.RData")
 
+## Also as a workbook, one sheet per outcome, alongside 13_/14_'s xlsx
+## tables - so the mutually-adjusted per-condition results (adjusted OR,
+## standardised RR, and the crude exposed/unexposed counts behind them)
+## are readable outside R too.
+core3_rr_wb <- openxlsx::createWorkbook()
+openxlsx::addWorksheet(core3_rr_wb, "hosp")
+openxlsx::writeDataTable(core3_rr_wb, "hosp", core3_rr_hosp, withFilter = TRUE)
+openxlsx::addWorksheet(core3_rr_wb, "death")
+openxlsx::writeDataTable(core3_rr_wb, "death", core3_rr_death, withFilter = TRUE)
+openxlsx::saveWorkbook(
+  core3_rr_wb,
+  file.path(table_dir, "core3_rr_tables.xlsx"),
+  overwrite = TRUE
+)
+
 ## ============================================================
 ## 7. Forest-style plots of the standardised RR
 ## ============================================================
@@ -457,7 +543,8 @@ plot_core3_rr <- function(summary_tbl, outcome_label) {
         "Condition-specific relative risk of ", outcome_label
       ),
       subtitle = paste0(
-        "Mutually adjusted for the other two core conditions, age, and sex\n",
+        "Mutually adjusted for the other two core conditions, age, sex, ",
+        "year, and state\n",
         "95% CI from parametric bootstrap"
       ),
       x = paste0("Relative risk of ", outcome_label, " (present vs absent)"),
@@ -497,15 +584,22 @@ ggsave(
 ## ============================================================
 ## 8. Joint core-3 profile (8 mutually-exclusive combinations)
 ## ============================================================
-## Sections 2-7 above put dm/htn/ckd into the SAME model but still treat
-## each as a separate additive term - which silently assumes their effects
-## simply add up on the log-odds scale, and gives no way to see whether,
-## say, DM+CKD together carry more or less risk than the sum of DM alone
-## and CKD alone would suggest. It also cannot show that CKD's risk
-## magnitude need not equal DM's just because both are coded as "1
-## condition" - a comorbidity-COUNT model (the 0/1/2+ scheme used in
-## 03_relative_risk.R) forces exactly that assumption, with no support for
-## it in the literature.
+## Two separate limitations this section addresses, in two different models:
+##   1. Sections 2-7 above (core3) put dm/htn/ckd into the SAME model but
+##      still treat each as a separate ADDITIVE term - which silently
+##      assumes their effects simply add up on the log-odds scale, and
+##      gives no way to see whether, say, DM+CKD together carry more or
+##      less risk than DM-alone x CKD-alone would predict if the effects
+##      really did just multiply (they don't - see the sub-multiplicative
+##      comparison this script's discussion derives from core_profile_rr_*
+##      below: observed DM+CKD is well under the naive product).
+##   2. 03_relative_risk.R's older comorb_count_group scheme (0/1/2+) is a
+##      DIFFERENT limitation: it counts HOW MANY conditions someone has,
+##      not WHICH ones, so it forces a diabetes-only patient and a
+##      CKD-only patient to have the same estimated risk multiplier just
+##      because both are "1 comorbidity". core3 does not have this problem
+##      (dm/htn/ckd already get separate coefficients there), but it also
+##      does not fix limitation 1 above.
 ##
 ## `core_profile` (built in add_core3() above) instead assigns every person
 ## to exactly one of 8 mutually-exclusive categories (single conditions,
@@ -1088,15 +1182,33 @@ ggsave(
 ## curves differ only in the focal condition, not in the distribution of the
 ## other core conditions or sex.
 ##
-## The forest plot uses the mutually adjusted core-3 GLMs from section 2. For
-## the risk curves, we refit the same adjustment set with a penalised age
-## smooth. This avoids the unstable boundary extrapolation of a low-df natural
-## spline at ages with few observations (especially age 0 and ages above 95),
-## while still avoiding condition-specific age smooths in the sparse death
-## data.
+## Uses the SAME adjustment set as the core3 GAMs in section 2 (age/state
+## smooths, sex/year/dm/htn/ckd parametric) - not the section-2 fit objects
+## directly, because those interaction-free main-effects fits are exactly
+## what a per-age curve needs, but make_core3_absolute_risk() below still
+## needs its own refit here (rather than reusing fit_hosp_core3) so this
+## section stays self-contained and independently rerunnable. Age is a
+## penalised smooth (not a low-df natural spline) to avoid unstable
+## boundary extrapolation at ages with few observations (especially age 0
+## and ages above 95), while still avoiding condition-specific age smooths
+## in the sparse death data.
+##
+## Earlier versions of this section omitted year/state from this specific
+## model, reasoning that adding an 8-year x 27-state standardisation grid
+## to a per-single-year-of-age curve would be too memory-heavy for the
+## bootstrap. make_core3_absolute_risk() below now processes bootstrap
+## draws in blocks (the same reshape-and-matrix-multiply trick used by
+## weighted_risk_draws()/make_profile_age_curve() elsewhere in this file)
+## specifically so that shortcut is no longer necessary, and this model can
+## match sections 2 and 8 exactly.
 
 fit_hosp_fig3 <- mgcv::bam(
-  hosp_only ~ s(age_years, k = 10, bs = "ts") + sex + dm + htn + ckd,
+  hosp_only ~
+    s(age_years, k = 10, bs = "ts") +
+    sex +
+    year +
+    s(uf_residence, bs = "re") +
+    dm + htn + ckd,
   data = hosp_cohort,
   family = binomial(link = "logit"),
   method = "fREML",
@@ -1104,7 +1216,12 @@ fit_hosp_fig3 <- mgcv::bam(
 )
 
 fit_death_fig3 <- mgcv::bam(
-  death_only ~ s(age_years, k = 10, bs = "ts") + sex + dm + htn + ckd,
+  death_only ~
+    s(age_years, k = 10, bs = "ts") +
+    sex +
+    year +
+    s(uf_residence, bs = "re") +
+    dm + htn + ckd,
   data = death_cohort,
   family = binomial(link = "logit"),
   method = "fREML",
@@ -1114,30 +1231,45 @@ fit_death_fig3 <- mgcv::bam(
 
 figure3_ages <- 1:95
 
+## Standardises over sex x year x state x other-two-conditions (the full
+## adjustment set shared with sections 2 and 8) at every single year of
+## age. Bootstrap draws are processed in blocks of `draw_block_size` and
+## immediately collapsed to a (cell x block) weighted-average-risk matrix
+## via one reshape + matrix multiply, rather than ever materialising the
+## full (grid rows x B draws) matrix - the same memory-safety approach as
+## weighted_risk_draws() (section 8) and make_profile_age_curve() (section
+## 12), needed here because adding year/state makes the standardisation
+## grid far larger than a sex-only one.
 make_core3_absolute_risk <- function(
   fit,
   data,
   condition_var,
   B = 2000,
-  seed = 1
+  seed = 1,
+  draw_block_size = 200
 ) {
 
   other_conditions <- setdiff(c("dm", "htn", "ckd"), condition_var)
+  status_levels <- c("Condition absent", "Condition present")
 
   standardisation_strata <- data |>
     dplyr::count(
-      sex,
+      sex, year, uf_residence,
       dplyr::across(dplyr::all_of(other_conditions)),
       name = "n"
     ) |>
     dplyr::mutate(weight = n / sum(n))
 
+  n_strata <- nrow(standardisation_strata)
+  w_rep <- standardisation_strata$weight
+
+  ## expand_grid() varies its LAST argument fastest, so - for a fixed
+  ## (age_years, condition_status) cell - the strata rows always appear in
+  ## the same order and count (n_strata). That fixed layout is what lets
+  ## the matrix-reshape trick below stand in for an explicit group-by.
   prediction_grid <- tidyr::expand_grid(
     age_years = figure3_ages,
-    condition_status = factor(
-      c("Condition absent", "Condition present"),
-      levels = c("Condition absent", "Condition present")
-    ),
+    condition_status = factor(status_levels, levels = status_levels),
     standardisation_strata
   ) |>
     dplyr::mutate(
@@ -1147,91 +1279,64 @@ make_core3_absolute_risk <- function(
   prediction_grid[[condition_var]] <- prediction_grid$focal_value
   prediction_grid$focal_value <- NULL
 
-  X <- if (inherits(fit, "gam")) {
-    stats::predict(fit, newdata = prediction_grid, type = "lpmatrix")
-  } else {
-    stats::model.matrix(
-      stats::delete.response(stats::terms(fit)),
-      data = prediction_grid,
-      contrasts.arg = fit$contrasts
-    )
-  }
-
+  X <- stats::predict(fit, newdata = prediction_grid, type = "lpmatrix")
   beta_hat <- stats::coef(fit)
 
-  point_risk <- stats::plogis(as.numeric(X %*% beta_hat))
+  cell_meta <- tidyr::expand_grid(
+    age_years = figure3_ages,
+    condition_status = factor(status_levels, levels = status_levels)
+  )
+  n_cells <- nrow(cell_meta)
+
+  point_risk_flat <- stats::plogis(as.numeric(X %*% beta_hat))
+  cell_point <- colSums(matrix(point_risk_flat, nrow = n_strata) * w_rep)
 
   set.seed(seed)
   beta_draws <- MASS::mvrnorm(
     n = B,
     mu = beta_hat,
-    Sigma = stats::vcov(fit)
+    Sigma = stats::vcov(fit, unconditional = TRUE)
   )
 
-  risk_draws <- stats::plogis(X %*% t(beta_draws))
+  cell_draws <- matrix(NA_real_, nrow = n_cells, ncol = B)
 
-  ## Keep the paired bootstrap draws for absent and present. This permits a
-  ## proper CI for their ratio, rather than incorrectly dividing two separate
-  ## confidence intervals.
-  risk_for <- function(age, status) {
+  for (first_draw in seq.int(1, B, by = draw_block_size)) {
 
-    row_index <- which(
-      prediction_grid$age_years == age &
-        prediction_grid$condition_status == status
-    )
+    draw_index <- first_draw:min(first_draw + draw_block_size - 1, B)
 
-    list(
-      point = sum(point_risk[row_index] * prediction_grid$weight[row_index]),
-      draws = colSums(
-        risk_draws[row_index, , drop = FALSE] *
-          prediction_grid$weight[row_index]
-      )
-    )
+    p_block <- stats::plogis(X %*% t(beta_draws[draw_index, , drop = FALSE]))
+
+    ## Reshape (n_age*n_status*n_strata x block) -> (n_strata x
+    ## n_cells*block), take the weighted sum over strata in one matrix
+    ## multiply, then reshape back to (n_cells x block). Safe because R
+    ## matrices are column-major and expand_grid's row order (above) means
+    ## strata is the fastest-varying index within each (age, status) cell.
+    mat2 <- matrix(p_block, nrow = n_strata)
+    weighted_row <- w_rep %*% mat2
+    cell_draws[, draw_index] <- matrix(weighted_row, nrow = n_cells)
   }
 
-  absolute_risk <- purrr::map_dfr(
-    figure3_ages,
-    function(age) {
-      purrr::map_dfr(
-        levels(prediction_grid$condition_status),
-        function(status) {
+  absolute_risk <- cell_meta |>
+    dplyr::mutate(
+      absolute_risk = cell_point,
+      risk_lower = apply(cell_draws, 1, stats::quantile, probs = 0.025, names = FALSE),
+      risk_upper = apply(cell_draws, 1, stats::quantile, probs = 0.975, names = FALSE)
+    )
 
-          risk <- risk_for(age, status)
+  ## Paired bootstrap draws for absent/present (same draw index, same age)
+  ## give a proper CI for their ratio, rather than incorrectly dividing two
+  ## separately-computed confidence intervals.
+  idx_absent  <- which(cell_meta$condition_status == "Condition absent")
+  idx_present <- which(cell_meta$condition_status == "Condition present")
 
-          tibble::tibble(
-            age_years = age,
-            condition_status = factor(
-              status,
-              levels = levels(prediction_grid$condition_status)
-            ),
-            absolute_risk = risk$point,
-            risk_lower = stats::quantile(
-              risk$draws, 0.025, names = FALSE
-            ),
-            risk_upper = stats::quantile(
-              risk$draws, 0.975, names = FALSE
-            )
-          )
-        }
-      )
-    }
-  )
+  rr_draws_mat <- cell_draws[idx_present, , drop = FALSE] /
+    cell_draws[idx_absent, , drop = FALSE]
 
-  relative_risk <- purrr::map_dfr(
-    figure3_ages,
-    function(age) {
-
-      risk_absent <- risk_for(age, "Condition absent")
-      risk_present <- risk_for(age, "Condition present")
-      rr_draws <- risk_present$draws / risk_absent$draws
-
-      tibble::tibble(
-        age_years = age,
-        rr = risk_present$point / risk_absent$point,
-        rr_lower = stats::quantile(rr_draws, 0.025, names = FALSE),
-        rr_upper = stats::quantile(rr_draws, 0.975, names = FALSE)
-      )
-    }
+  relative_risk <- tibble::tibble(
+    age_years = cell_meta$age_years[idx_absent],
+    rr = cell_point[idx_present] / cell_point[idx_absent],
+    rr_lower = apply(rr_draws_mat, 1, stats::quantile, probs = 0.025, names = FALSE),
+    rr_upper = apply(rr_draws_mat, 1, stats::quantile, probs = 0.975, names = FALSE)
   )
 
   list(absolute_risk = absolute_risk, relative_risk = relative_risk)
@@ -1474,8 +1579,8 @@ fig3_condition_rr_forest <- ggplot2::ggplot(
   ggplot2::labs(
     title = "Overall relative risk by underlying condition",
     subtitle = paste0(
-      "Mutually adjusted for the other two core conditions, age and sex; ",
-      "95% confidence intervals from parametric bootstrap"
+      "Mutually adjusted for the other two core conditions, age, sex, ",
+      "year, and state; 95% confidence intervals from parametric bootstrap"
     ),
     x = "Relative risk, present versus absent (log scale)",
     y = NULL
@@ -1588,13 +1693,18 @@ if (file.exists(fig3_ageint_cache)) {
 
 } else {
 
+## Same adjustment set as fit_hosp_fig3/fit_death_fig3 (year, state) plus
+## the age-interaction smooths - kept identical to the no-interaction
+## fits in everything else, so the AIC comparison just below isolates the
+## effect of adding these three smooths rather than mixing it with a
+## change in adjustment set.
 fit_hosp_fig3_ageint <- mgcv::bam(
   hosp_only ~
     s(age_years, k = 10, bs = "ts") +
     s(age_years, by = dm,  k = 10, bs = "ts") +
     s(age_years, by = htn, k = 10, bs = "ts") +
     s(age_years, by = ckd, k = 10, bs = "ts") +
-    sex + dm + htn + ckd,
+    sex + year + s(uf_residence, bs = "re") + dm + htn + ckd,
   data = hosp_cohort,
   family = binomial(link = "logit"),
   method = "fREML",
@@ -1607,7 +1717,7 @@ fit_death_fig3_ageint <- mgcv::bam(
     s(age_years, by = dm,  k = 10, bs = "ts") +
     s(age_years, by = htn, k = 10, bs = "ts") +
     s(age_years, by = ckd, k = 10, bs = "ts") +
-    sex + dm + htn + ckd,
+    sex + year + s(uf_residence, bs = "re") + dm + htn + ckd,
   data = death_cohort,
   family = binomial(link = "logit"),
   method = "fREML",
@@ -1764,8 +1874,23 @@ fig3_age_interaction_comparison <- ggplot2::ggplot(
       "Grey: one constant odds ratio per condition at every age.\n",
       "Blue: adds a per-condition age-varying deviation, shrunk to zero ",
       "when unsupported.\n",
-      "AIC favours the interaction model for hospitalisation (lower by ",
-      "~136) but not death (lower by ~0.3)."
+      "AIC delta (no-interaction minus with-interaction), positive favours ",
+      "interaction - Hospitalisation: ",
+      sprintf(
+        "%+.0f",
+        fig3_ageint_aic$AIC[fig3_ageint_aic$outcome == "Hospitalisation" &
+          fig3_ageint_aic$model == "No age interaction"] -
+          fig3_ageint_aic$AIC[fig3_ageint_aic$outcome == "Hospitalisation" &
+            fig3_ageint_aic$model == "With age interaction"]
+      ),
+      "; Death: ",
+      sprintf(
+        "%+.1f",
+        fig3_ageint_aic$AIC[fig3_ageint_aic$outcome == "Death from chikungunya" &
+          fig3_ageint_aic$model == "No age interaction"] -
+          fig3_ageint_aic$AIC[fig3_ageint_aic$outcome == "Death from chikungunya" &
+            fig3_ageint_aic$model == "With age interaction"]
+      )
     ),
     x = "Age (years)",
     y = "Relative risk (log scale)",

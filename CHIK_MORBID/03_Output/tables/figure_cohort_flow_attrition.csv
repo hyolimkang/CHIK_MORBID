@@ -1,0 +1,8 @@
+"step","parent_n","retained_n","excluded_n","exclusion_reason"
+"All SINAN chikungunya records, 2015-2025",,2362820,,
+"Confirmed chikungunya cases",2362820,1167917,1194903,"Not confirmed chikungunya"
+"Notified/onset in 2017 or later",1167917,1076401,91516,"Before 2017 or missing event date"
+"Valid age and sex",1076401,1074994,1407,"Invalid/missing age or sex"
+"DM, HTN, and CKD status known (core-3 complete case)",1074994,1074796,198,"At least one core-condition field unknown/missing"
+"Hospitalisation cohort: status known",1074796,776072,298724,"Hospitalisation status unknown"
+"Mortality cohort: chikungunya death status known",1074796,1074796,0,"Chikungunya death status unknown"

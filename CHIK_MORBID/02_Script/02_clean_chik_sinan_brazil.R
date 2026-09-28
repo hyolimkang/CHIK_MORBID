@@ -39,7 +39,7 @@ suppressPackageStartupMessages({
 # ---- 1. Config ------------------------------------------------------------
 
 YEAR_START <- 2015
-YEAR_END   <- 2024
+YEAR_END   <- 2025
 
 DATA_DIR  <- here::here("01_Data")
 RAW_DIR   <- file.path(DATA_DIR, "sinan_chik_csv")

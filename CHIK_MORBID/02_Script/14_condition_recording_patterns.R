@@ -15,7 +15,7 @@
 # Other summaries use all confirmed 2017+ cases with a known event date, and
 # retain an explicit "Unknown" stratum where a covariate is unavailable.
 #
-# Needs: 01_Data/chik_sinan_individual_2015_2024.rds and packages from
+# Needs: 01_Data/chik_sinan_individual_2015_2025.rds and packages from
 #        00_setup.R. Runs standalone and does not alter the RR cohorts.
 #
 # Outputs:
@@ -34,7 +34,7 @@ table_dir <- "03_Output/tables"
 if (!dir.exists(fig_dir)) dir.create(fig_dir, recursive = TRUE)
 if (!dir.exists(table_dir)) dir.create(table_dir, recursive = TRUE)
 
-ind <- readRDS("01_Data/chik_sinan_individual_2015_2024.rds")
+ind <- readRDS("01_Data/chik_sinan_individual_2015_2025.rds")
 
 condition_cols <- c(
   "diabetes",

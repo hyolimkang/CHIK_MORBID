@@ -23,7 +23,7 @@
 #      definitions.
 #
 # Independent of 12_core3_condition_specific_rr.R: reads
-# 01_Data/chik_sinan_individual_2015_2024.rds directly (needs
+# 01_Data/chik_sinan_individual_2015_2025.rds directly (needs
 # 02_clean_chik_sinan_brazil.R + 00_setup.R already run), and does not read
 # or write anything 12_ produces. core_cols/core_profile are rebuilt here
 # from scratch with the SAME definitions as 12_'s add_core3(), specifically
@@ -41,7 +41,7 @@
 table_dir <- "03_Output/tables"
 if (!dir.exists(table_dir)) dir.create(table_dir, recursive = TRUE)
 
-ind <- readRDS("01_Data/chik_sinan_individual_2015_2024.rds")
+ind <- readRDS("01_Data/chik_sinan_individual_2015_2025.rds")
 
 core_cols    <- c("diabetes", "hypertension", "renal_disease")
 noncore_cols <- c("hepatopathy", "hematologic", "peptic_ulcer", "autoimmune")
@@ -69,7 +69,7 @@ add_step <- function(flow, label, n) {
 }
 
 flow <- tibble::tibble(step = character(), n = integer())
-flow <- add_step(flow, "1. All SINAN chikungunya records, 2015-2024 (raw)", nrow(ind))
+flow <- add_step(flow, "1. All SINAN chikungunya records, 2015-2025 (raw)", nrow(ind))
 
 step1 <- ind |> dplyr::filter(is_confirmed_chik)
 flow <- add_step(flow, "2. Confirmed chikungunya (CLASSI_FIN = 13)", nrow(step1))
@@ -116,7 +116,7 @@ flow <- add_step(
 ## hosp_cohort and print a nonsensical >100%.
 parent_step <- c(
   NA,
-  "1. All SINAN chikungunya records, 2015-2024 (raw)",
+  "1. All SINAN chikungunya records, 2015-2025 (raw)",
   "2. Confirmed chikungunya (CLASSI_FIN = 13)",
   "3. + notified/onset 2017 or later",
   "4. + valid age (0-100) and sex known",
