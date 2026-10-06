@@ -629,11 +629,28 @@ ggsave(
 ## effect for state, for consistency between the two outcome models.
 
 ## The pooled-profile output is unchanged by the age-stratified extension. If
-## an already-computed copy is available, reuse it so rerunning this script to
-## update the new age-specific analyses does not repeat its costly bootstrap.
+## a copy with risk and RR confidence intervals is available, reuse it so
+## rerunning this script does not repeat its costly bootstrap. Earlier caches
+## stored RR intervals only, so deliberately refresh those once.
+profile_cache_has_risk_cis <- function(path, object_name) {
+  if (!file.exists(path)) return(FALSE)
+  cache_environment <- new.env(parent = emptyenv())
+  load(path, envir = cache_environment)
+  if (!exists(object_name, envir = cache_environment, inherits = FALSE)) return(FALSE)
+  required <- c(
+    "standardised_risk", "standardised_risk_lower", "standardised_risk_upper",
+    "rr", "rr_lower", "rr_upper"
+  )
+  all(required %in% names(get(object_name, envir = cache_environment)))
+}
+
 if (
-  file.exists("01_Data/core_profile_rr_hosp.RData") &&
-    file.exists("01_Data/core_profile_rr_death.RData")
+  profile_cache_has_risk_cis(
+    "01_Data/core_profile_rr_hosp.RData", "core_profile_rr_hosp"
+  ) &&
+    profile_cache_has_risk_cis(
+      "01_Data/core_profile_rr_death.RData", "core_profile_rr_death"
+    )
 ) {
 
   load("01_Data/core_profile_rr_hosp.RData")
@@ -759,6 +776,12 @@ standardise_profile_rr <- function(fit, data, B = 2000, seed = 1) {
   tibble::tibble(
     core_profile = factor(profile_levels, levels = profile_levels),
     standardised_risk = as.numeric(risk_point),
+    standardised_risk_lower = apply(
+      risk_draws, 2, quantile, probs = 0.025, names = FALSE
+    ),
+    standardised_risk_upper = apply(
+      risk_draws, 2, quantile, probs = 0.975, names = FALSE
+    ),
     rr = as.numeric(rr_point),
     rr_lower = apply(rr_draws, 2, quantile, probs = 0.025, names = FALSE),
     rr_upper = apply(rr_draws, 2, quantile, probs = 0.975, names = FALSE)
