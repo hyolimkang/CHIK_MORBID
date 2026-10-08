@@ -650,12 +650,16 @@ if (
   ) &&
     profile_cache_has_risk_cis(
       "01_Data/core_profile_rr_death.RData", "core_profile_rr_death"
-    )
+    ) &&
+    file.exists("01_Data/core_profile_rr_hosp_draws.RData") &&
+    file.exists("01_Data/core_profile_rr_death_draws.RData")
 ) {
 
   load("01_Data/core_profile_rr_hosp.RData")
   load("01_Data/core_profile_rr_death.RData")
-  message("[12] reusing existing pooled core-profile RR summaries")
+  load("01_Data/core_profile_rr_hosp_draws.RData")
+  load("01_Data/core_profile_rr_death_draws.RData")
+  message("[12] reusing existing pooled core-profile RR summaries (+ coefficient draws)")
 
 } else {
 
@@ -731,7 +735,7 @@ weighted_risk_draws <- function(X, beta_draws, w, draw_block_size = 500) {
   output
 }
 
-standardise_profile_rr <- function(fit, data, B = 2000, seed = 1) {
+standardise_profile_rr <- function(fit, data, B = 2000, seed = 1, draws_out = NULL) {
 
   profile_levels <- levels(data$core_profile)
 
@@ -773,6 +777,19 @@ standardise_profile_rr <- function(fit, data, B = 2000, seed = 1) {
   rr_point <- risk_point / risk_point[["None"]]
   rr_draws <- sweep(risk_draws, 1, risk_draws[, "None"], FUN = "/")
 
+  ## Retain the draw-level RR matrix (all 8 profiles from the SAME
+  ## coefficient draw, so downstream Monte Carlo propagation - e.g. 34_'s
+  ## burden allocation - uses a coherent joint draw rather than independent
+  ## per-profile lower/upper endpoints). None is exactly 1 for every draw by
+  ## construction (rr_draws is rr relative to its own "None" column).
+  if (!is.null(draws_out)) {
+    rr_draws_tidy <- tibble::as_tibble(rr_draws) |>
+      dplyr::mutate(draw = dplyr::row_number(), .before = 1) |>
+      tidyr::pivot_longer(-draw, names_to = "profile", values_to = "rr") |>
+      dplyr::mutate(profile = factor(profile, levels = profile_levels))
+    assign(draws_out, rr_draws_tidy, envir = parent.frame())
+  }
+
   tibble::tibble(
     core_profile = factor(profile_levels, levels = profile_levels),
     standardised_risk = as.numeric(risk_point),
@@ -803,13 +820,17 @@ get_crude_profile_counts <- function(data, outcome_var) {
     )
 }
 
-core_profile_rr_hosp <- standardise_profile_rr(fit_hosp_profile, hosp_cohort) |>
+core_profile_rr_hosp <- standardise_profile_rr(
+  fit_hosp_profile, hosp_cohort, draws_out = "core_profile_rr_hosp_draws"
+) |>
   dplyr::left_join(
     get_crude_profile_counts(hosp_cohort, "hosp_only"),
     by = "core_profile"
   )
 
-core_profile_rr_death <- standardise_profile_rr(fit_death_profile, death_cohort) |>
+core_profile_rr_death <- standardise_profile_rr(
+  fit_death_profile, death_cohort, draws_out = "core_profile_rr_death_draws"
+) |>
   dplyr::left_join(
     get_crude_profile_counts(death_cohort, "death_only"),
     by = "core_profile"
@@ -820,6 +841,8 @@ print(core_profile_rr_death, n = Inf)
 
 save(core_profile_rr_hosp, file = "01_Data/core_profile_rr_hosp.RData")
 save(core_profile_rr_death, file = "01_Data/core_profile_rr_death.RData")
+save(core_profile_rr_hosp_draws, file = "01_Data/core_profile_rr_hosp_draws.RData")
+save(core_profile_rr_death_draws, file = "01_Data/core_profile_rr_death_draws.RData")
 
 }
 

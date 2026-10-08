@@ -375,14 +375,14 @@ profile_colours <- c(
 )
 
 plot_both <- dplyr::bind_rows(
-  indep_long |> dplyr::rename(prevalence = independence) |> dplyr::mutate(method = "1. Independence (minimum clustering)"),
+  indep_long |> dplyr::rename(prevalence = independence) |> dplyr::mutate(method = "1. Independence"),
   max_long |> dplyr::rename(prevalence = max_clustering) |> dplyr::mutate(method = "2. Maximum clustering (comonotonic)")
 ) |>
   dplyr::left_join(age_lookup, by = "age_clean") |>
   dplyr::mutate(
     age_mid = ifelse(is.infinite(age_end), age_start + 2.5, (age_start + age_end) / 2),
     profile = factor(profile, levels = rev(core_profile_levels)),
-    method = factor(method, levels = c("1. Independence (minimum clustering)", "2. Maximum clustering (comonotonic)"))
+    method = factor(method, levels = c("1. Independence", "2. Maximum clustering (comonotonic)"))
   )
 
 fig_two_extremes <- ggplot2::ggplot(plot_both, ggplot2::aes(x = age_mid, y = prevalence, fill = profile)) +
