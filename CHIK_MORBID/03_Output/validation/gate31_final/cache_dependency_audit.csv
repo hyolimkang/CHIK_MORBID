@@ -1,0 +1,24 @@
+file,produced_by,status_after_gate31,action_taken_this_gate,must_regenerate_before_next_gate
+01_Data/chik_sinan_individual_2015_2025.rds,02_clean_chik_sinan_brazil.R,REGENERATED from raw SINAN CSVs with corrected died_from_chik,Rebuilt from raw,No (done)
+01_Data/core3_rr_hosp.RData,12_,REGENERATED (rerun 12_),Rebuilt,No (done)
+01_Data/core3_rr_death.RData,12_,"REGENERATED (rerun 12_, death N/RR now reflect correction)",Rebuilt,No (done)
+01_Data/core_profile_rr_hosp.RData,12_/19_/28_,REGENERATED (rerun 12_),Rebuilt,No (done)
+01_Data/core_profile_rr_death.RData,12_/19_/28_,"REGENERATED (rerun 12_, death RR now reflects correction)",Rebuilt,No (done)
+01_Data/core_profile_rr_hosp_draws.RData,12_,REGENERATED (rerun 12_),Rebuilt,No (done)
+01_Data/core_profile_rr_death_draws.RData,12_,"REGENERATED (rerun 12_, draw-level, death now reflects correction)",Rebuilt,No (done)
+01_Data/core_profile_rr_hosp_by_age.RData,12_,REGENERATED (rerun 12_),Rebuilt,No (done)
+01_Data/core_profile_rr_death_by_age.RData,12_,"REGENERATED (rerun 12_, death now reflects correction)",Rebuilt,No (done)
+01_Data/fig3_age_specific_absolute_risk_data.RData,12_,REGENERATED (rerun 12_),Rebuilt,No (done)
+01_Data/fig3_age_interaction_comparison_data.RData,12_,"REGENERATED (rerun 12_, death comparison now reflects correction)",Rebuilt (cache file deleted then regenerated),No (done)
+01_Data/core_profile_rr_age_curve.RData,12_,REGENERATED (rerun 12_),Rebuilt (cache file deleted then regenerated),No (done)
+01_Data/rr_death_model.RData,03_relative_risk.R (OLD 7-condition pipeline - different cohort entirely),"OUT OF SCOPE - belongs to the old 7-condition analysis_df pipeline (03_relative_risk.R), not the core-3 cohort this gate addresses. Not touched.",None (out of scope),N/A
+01_Data/brazil_profile_burden_allocation.RData,34_profile_burden_allocation_brazil.R,"STALE - last built 2026-10-06, BEFORE this correction; reads the now-corrected core_profile_rr_death.RData/_draws.RData but has not itself been rerun","None - deliberately NOT rerun per task instruction (population burden modelling is Gate 3.2+, out of scope)",YES - rerun 34_ before any population-burden work
+01_Data/brazil_profile_burden_group_ui.RData,34_profile_burden_allocation_brazil.R,STALE - depends on brazil_profile_burden_allocation.RData above,None - deliberately NOT rerun,YES - rerun 34_ before any population-burden work
+03_Output/figures/fig_profile_burden_rate_heatmap_brazil_PROTOTYPE.png,34_,STALE (depends on 34_ output),None - deliberately NOT rerun,YES - rerun 34_ (produces this directly)
+03_Output/figures/fig_burden_by_comorbidity_status_age_brazil_PROTOTYPE.png,34_,STALE (depends on 34_ output),None - deliberately NOT rerun,YES - rerun 34_ (produces this directly)
+03_Output/figures/fig_profile_burden_share_calibrated_brazil_PROTOTYPE.png,34_,STALE (depends on 34_ output),None - deliberately NOT rerun,YES - rerun 34_ (produces this directly)
+03_Output/figures/fig_profile_burden_share_calibrated_brazil_absolute_PROTOTYPE.png,37_,STALE (depends on 34_ output),None - deliberately NOT rerun,"YES - rerun 34_, then 37_"
+03_Output/figures/fig_profile_prevalence_to_hospitalisation_burden_brazil_PROTOTYPE.png,35_,STALE (depends on 34_ output),None - deliberately NOT rerun,"YES - rerun 34_, then 35_"
+03_Output/figures/fig_profile_prevalence_to_death_burden_brazil_PROTOTYPE.png,35_,STALE (depends on 34_ output),None - deliberately NOT rerun,"YES - rerun 34_, then 35_"
+03_Output/figures/fig_profile_prevalence_to_hospitalisation_burden_brazil_absolute_PROTOTYPE.png,36_,STALE (depends on 34_ output),None - deliberately NOT rerun,"YES - rerun 34_, then 36_"
+03_Output/figures/fig_profile_prevalence_to_death_burden_brazil_absolute_PROTOTYPE.png,36_,STALE (depends on 34_ output),None - deliberately NOT rerun,"YES - rerun 34_, then 36_"

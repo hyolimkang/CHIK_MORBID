@@ -1,0 +1,5 @@
+scenario,n_target_total,n_supported,n_unsupported,pct_supported,unsupported_states
+B,1072989,1072989,0,100,
+C1,606120,606120,0,100,
+C2,379875,379875,0,100,
+D,440596,440596,0,100,

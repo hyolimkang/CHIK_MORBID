@@ -252,7 +252,22 @@ clean <- raw %>%
     evolution         = recode(EVOLUCAO,   map_evolucao),
     is_confirmed_chik = (CLASSI_FIN == "13"),
     is_lab_confirmed  = (CLASSI_FIN == "13" & CRITERIO == "1"),
-    died_from_chik    = (EVOLUCAO  == "2"),
+    ## Gate 3.1 fix (2026-10): the previous `(EVOLUCAO == "2")` form returns
+    ## FALSE - not NA - for every non-"2" value, including "4" (death under
+    ## investigation), "9" (unknown), blank, and the unmapped stray code "0"
+    ## found in the raw files. That silently coded ~8.45% of the analytic
+    ## cohort as confirmed non-deaths when their chikungunya-death status was
+    ## actually unresolved (see 03_Output/validation/gate31/VALIDATION_3_1.md
+    ## and gate31_final/implementation_report.md for the audit). `evolution`
+    ## above already carries the verified-correct label (including sending
+    ## blank/unmapped codes to NA via recode()) and is kept as the permanent,
+    ## auditable record of the raw code; died_from_chik is now explicitly
+    ## NA-aware:
+    died_from_chik    = dplyr::case_when(
+      EVOLUCAO == "2"          ~ TRUE,   # death from chikungunya
+      EVOLUCAO %in% c("1", "3") ~ FALSE, # cured, or death from another cause
+      TRUE                      ~ NA     # 4 (under investigation), 9 (unknown),
+    ),                                   # blank, "0", and any unmapped code
 
     # ---- key clinical signs ----
     fever             = recode(FEBRE,     map_sim_nao),

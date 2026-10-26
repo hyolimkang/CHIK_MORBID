@@ -1,0 +1,25 @@
+"row","characteristic","hospitalisation","mortality","is_section_heading"
+1,"Cohort selection and outcome completeness","","",TRUE
+2,"Eligible core-3 population, N","1,074,796","1,074,796",FALSE
+3,"Outcome status unknown, n (%)","298,724 (27.8%)","90,849 (8.5%)",FALSE
+4,"Final analysis cohort, N","776,072","983,947",FALSE
+5,"Demographic characteristics","","",TRUE
+6,"Age, median (IQR), years","39 (24–54)","39 (24–54)",FALSE
+7,"Female, n (%)","472,487 (60.9%)","600,128 (61.0%)",FALSE
+8,"Male, n (%)","303,585 (39.1%)","383,819 (39.0%)",FALSE
+9,"Clinical outcomes","","",TRUE
+10,"Hospitalised, n (%)","25,363 (3.3%)","—",FALSE
+11,"Died from chikungunya, n (%)","—","1,050 (0.1%)",FALSE
+12,"Core conditions","","",TRUE
+13,"Diabetes mellitus (DM), n (%)","38,661 (5.0%)","45,529 (4.6%)",FALSE
+14,"Hypertension (HTN), n (%)","93,530 (12.1%)","110,350 (11.2%)",FALSE
+15,"Chronic kidney disease (CKD), n (%)","3,739 (0.5%)","4,412 (0.4%)",FALSE
+16,"Joint comorbidity profiles","","",TRUE
+17,"None, n (%)","668,110 (86.1%)","856,342 (87.0%)",FALSE
+18,"DM only, n (%)","12,791 (1.6%)","15,302 (1.6%)",FALSE
+19,"HTN only, n (%)","67,094 (8.6%)","79,512 (8.1%)",FALSE
+20,"CKD only, n (%)","1,379 (0.2%)","1,640 (0.2%)",FALSE
+21,"DM + HTN, n (%)","24,338 (3.1%)","28,379 (2.9%)",FALSE
+22,"DM + CKD, n (%)","262 (0.03%)","313 (0.03%)",FALSE
+23,"HTN + CKD, n (%)","828 (0.11%)","924 (0.09%)",FALSE
+24,"DM + HTN + CKD, n (%)","1,270 (0.2%)","1,535 (0.2%)",FALSE

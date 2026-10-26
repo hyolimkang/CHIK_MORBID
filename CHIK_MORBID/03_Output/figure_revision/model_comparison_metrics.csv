@@ -1,0 +1,169 @@
+type,analysis,comparison,metric,value,lower,upper,uncertainty_method
+pooled out-of-fold metric,hosp:primary,A,log_loss,0.1319362463316161,,,
+pooled out-of-fold metric,hosp:primary,A,brier,0.030345428498477923,,,
+pooled out-of-fold metric,hosp:primary,A,auroc,0.7172784303919625,,,
+pooled out-of-fold metric,hosp:primary,A,auprc,0.11603758800157021,,,
+pooled out-of-fold metric,hosp:primary,A,calibration_intercept,-5.701996768108928e-5,,,
+pooled out-of-fold metric,hosp:primary,A,calibration_slope,1.0011977934417806,,,
+pooled out-of-fold metric,hosp:primary,A,observed_rate,0.03268124606995227,,,
+pooled out-of-fold metric,hosp:primary,A,mean_predicted,0.032682975118329585,,,
+pooled out-of-fold metric,hosp:primary,B,log_loss,0.13181746835041033,,,
+pooled out-of-fold metric,hosp:primary,B,brier,0.03033121921487619,,,
+pooled out-of-fold metric,hosp:primary,B,auroc,0.7181611333535676,,,
+pooled out-of-fold metric,hosp:primary,B,auprc,0.1167800953751624,,,
+pooled out-of-fold metric,hosp:primary,B,calibration_intercept,-5.329297072492284e-5,,,
+pooled out-of-fold metric,hosp:primary,B,calibration_slope,1.001001966852543,,,
+pooled out-of-fold metric,hosp:primary,B,observed_rate,0.03268124606995227,,,
+pooled out-of-fold metric,hosp:primary,B,mean_predicted,0.03268286102990516,,,
+pooled out-of-fold metric,hosp:primary,C,log_loss,0.1317396256010496,,,
+pooled out-of-fold metric,hosp:primary,C,brier,0.030322058243240507,,,
+pooled out-of-fold metric,hosp:primary,C,auroc,0.7186474679644859,,,
+pooled out-of-fold metric,hosp:primary,C,auprc,0.11723870938389809,,,
+pooled out-of-fold metric,hosp:primary,C,calibration_intercept,-6.818837012764767e-5,,,
+pooled out-of-fold metric,hosp:primary,C,calibration_slope,1.0008098884832453,,,
+pooled out-of-fold metric,hosp:primary,C,observed_rate,0.03268124606995227,,,
+pooled out-of-fold metric,hosp:primary,C,mean_predicted,0.0326833112354779,,,
+pooled out-of-fold metric,hosp:excluding_ckd,A,log_loss,0.13079604981081527,,,
+pooled out-of-fold metric,hosp:excluding_ckd,A,brier,0.029999507666991634,,,
+pooled out-of-fold metric,hosp:excluding_ckd,A,auroc,0.7159342014224205,,,
+pooled out-of-fold metric,hosp:excluding_ckd,A,auprc,0.11511398065739448,,,
+pooled out-of-fold metric,hosp:excluding_ckd,A,calibration_intercept,-4.7833189627030354e-5,,,
+pooled out-of-fold metric,hosp:excluding_ckd,A,calibration_slope,1.0011419457697923,,,
+pooled out-of-fold metric,hosp:excluding_ckd,A,observed_rate,0.032285296627232035,,,
+pooled out-of-fold metric,hosp:excluding_ckd,A,mean_predicted,0.032286730731244606,,,
+pooled out-of-fold metric,hosp:excluding_ckd,B,log_loss,0.13073972703914694,,,
+pooled out-of-fold metric,hosp:excluding_ckd,B,brier,0.02999316848777045,,,
+pooled out-of-fold metric,hosp:excluding_ckd,B,auroc,0.7164254594263877,,,
+pooled out-of-fold metric,hosp:excluding_ckd,B,auprc,0.11545869173944223,,,
+pooled out-of-fold metric,hosp:excluding_ckd,B,calibration_intercept,-4.0180414921296226e-5,,,
+pooled out-of-fold metric,hosp:excluding_ckd,B,calibration_slope,1.0010691301960004,,,
+pooled out-of-fold metric,hosp:excluding_ckd,B,observed_rate,0.032285296627232035,,,
+pooled out-of-fold metric,hosp:excluding_ckd,B,mean_predicted,0.032286500959064574,,,
+pooled out-of-fold metric,hosp:excluding_ckd,C,log_loss,0.13073443596855844,,,
+pooled out-of-fold metric,hosp:excluding_ckd,C,brier,0.029992576283843542,,,
+pooled out-of-fold metric,hosp:excluding_ckd,C,auroc,0.7164838271530846,,,
+pooled out-of-fold metric,hosp:excluding_ckd,C,auprc,0.11548991885357641,,,
+pooled out-of-fold metric,hosp:excluding_ckd,C,calibration_intercept,-4.58729725986036e-5,,,
+pooled out-of-fold metric,hosp:excluding_ckd,C,calibration_slope,1.0010430892780837,,,
+pooled out-of-fold metric,hosp:excluding_ckd,C,observed_rate,0.032285296627232035,,,
+pooled out-of-fold metric,hosp:excluding_ckd,C,mean_predicted,0.032286671548954905,,,
+pooled out-of-fold metric,death:primary,A,log_loss,0.007022361006593991,,,
+pooled out-of-fold metric,death:primary,A,brier,0.001053466325625677,,,
+pooled out-of-fold metric,death:primary,A,auroc,0.8460924070084949,,,
+pooled out-of-fold metric,death:primary,A,auprc,0.022238646032932227,,,
+pooled out-of-fold metric,death:primary,A,calibration_intercept,-3.7888893449384474e-4,,,
+pooled out-of-fold metric,death:primary,A,calibration_slope,1.0026682745492337,,,
+pooled out-of-fold metric,death:primary,A,observed_rate,0.0010671306482971136,,,
+pooled out-of-fold metric,death:primary,A,mean_predicted,0.0010675295312214705,,,
+pooled out-of-fold metric,death:primary,B,log_loss,0.006976259110112408,,,
+pooled out-of-fold metric,death:primary,B,brier,0.0010516061255603124,,,
+pooled out-of-fold metric,death:primary,B,auroc,0.8473610135092874,,,
+pooled out-of-fold metric,death:primary,B,auprc,0.025986629813328364,,,
+pooled out-of-fold metric,death:primary,B,calibration_intercept,-3.881529922264662e-4,,,
+pooled out-of-fold metric,death:primary,B,calibration_slope,1.0020417420101626,,,
+pooled out-of-fold metric,death:primary,B,observed_rate,0.0010671306482971136,,,
+pooled out-of-fold metric,death:primary,B,mean_predicted,0.0010675383924466167,,,
+pooled out-of-fold metric,death:primary,C,log_loss,0.006963952838799516,,,
+pooled out-of-fold metric,death:primary,C,brier,0.0010509392214828198,,,
+pooled out-of-fold metric,death:primary,C,auroc,0.8477514933139582,,,
+pooled out-of-fold metric,death:primary,C,auprc,0.02735990407094419,,,
+pooled out-of-fold metric,death:primary,C,calibration_intercept,-7.606372813276777e-4,,,
+pooled out-of-fold metric,death:primary,C,calibration_slope,1.0004967081984404,,,
+pooled out-of-fold metric,death:primary,C,observed_rate,0.0010671306482971136,,,
+pooled out-of-fold metric,death:primary,C,mean_predicted,0.001067928803385502,,,
+pooled out-of-fold metric,death:excluding_ckd,A,log_loss,0.006737958074879119,,,
+pooled out-of-fold metric,death:excluding_ckd,A,brier,9.935934858903606e-4,,,
+pooled out-of-fold metric,death:excluding_ckd,A,auroc,0.8395783928631559,,,
+pooled out-of-fold metric,death:excluding_ckd,A,auprc,0.019175409393310826,,,
+pooled out-of-fold metric,death:excluding_ckd,A,calibration_intercept,-5.712420160779626e-5,,,
+pooled out-of-fold metric,death:excluding_ckd,A,calibration_slope,1.002159684968417,,,
+pooled out-of-fold metric,death:excluding_ckd,A,observed_rate,0.0010045582853088456,,,
+pooled out-of-fold metric,death:excluding_ckd,A,mean_predicted,0.0010046149839221452,,,
+pooled out-of-fold metric,death:excluding_ckd,B,log_loss,0.0067175776413624134,,,
+pooled out-of-fold metric,death:excluding_ckd,B,brier,9.929485766480065e-4,,,
+pooled out-of-fold metric,death:excluding_ckd,B,auroc,0.8405019787719478,,,
+pooled out-of-fold metric,death:excluding_ckd,B,auprc,0.021341273162962575,,,
+pooled out-of-fold metric,death:excluding_ckd,B,calibration_intercept,9.33645391966491e-6,,,
+pooled out-of-fold metric,death:excluding_ckd,B,calibration_slope,1.0019071413757579,,,
+pooled out-of-fold metric,death:excluding_ckd,B,observed_rate,0.0010045582853088456,,,
+pooled out-of-fold metric,death:excluding_ckd,B,mean_predicted,0.001004549025174458,,,
+pooled out-of-fold metric,death:excluding_ckd,C,log_loss,0.006714572426542635,,,
+pooled out-of-fold metric,death:excluding_ckd,C,brier,9.929042008334577e-4,,,
+pooled out-of-fold metric,death:excluding_ckd,C,auroc,0.8405268080838257,,,
+pooled out-of-fold metric,death:excluding_ckd,C,auprc,0.02120358992985115,,,
+pooled out-of-fold metric,death:excluding_ckd,C,calibration_intercept,3.770826701504877e-5,,,
+pooled out-of-fold metric,death:excluding_ckd,C,calibration_slope,1.0017472160251129,,,
+pooled out-of-fold metric,death:excluding_ckd,C,observed_rate,0.0010045582853088456,,,
+pooled out-of-fold metric,death:excluding_ckd,C,mean_predicted,0.0010045208899615871,,,
+paired improvement (positive = first model better),hosp:primary,B vs A,log_loss,1.1877798120575806e-4,8.178930558161179e-5,1.5576665682990432e-4,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,B vs A,brier,1.4209283601734596e-5,7.39036204506501e-6,2.1028205158404184e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,B vs A,log_loss_relative_pct,0.0900268004496768,0.06199153595444717,0.11806206494490643,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,B vs A,brier_relative_pct,0.04682512096491671,0.024354119914423676,0.06929612201540974,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,B vs A,auroc,8.827029616050863e-4,5.856430411440822e-4,0.0011839027514478821,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),hosp:primary,B vs A,auprc,7.425073735921883e-4,3.66743586224538e-4,0.0011132848945354056,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),hosp:primary,C vs B,log_loss,7.784274936073638e-5,4.6328419250714306e-5,1.0935707947075846e-4,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,C vs B,brier,9.160971635680442e-6,2.1860736871675237e-6,1.6135869584193363e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,C vs B,log_loss_relative_pct,0.05905343983227399,0.035145887590223995,0.082960992074324,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,C vs B,brier_relative_pct,0.03020311043476739,0.007207338655530689,0.0531988822140041,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,C vs B,auroc,4.863346109182931e-4,3.165864481752684e-4,6.861361083041862e-4,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),hosp:primary,C vs B,auprc,4.586140087356888e-4,3.396774955572377e-5,8.919823492267756e-4,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),hosp:primary,C vs A,log_loss,1.9662073056649456e-4,1.473340095515431e-4,2.45907451581446e-4,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,C vs A,brier,2.3370255237415054e-5,1.3317554383121456e-5,3.342295609170865e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,C vs A,log_loss_relative_pct,0.1490270763595144,0.11167060883422844,0.18638354388480038,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,C vs A,brier_relative_pct,0.0770140887566879,0.04388652605050359,0.11014165146287222,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:primary,C vs A,auroc,0.0013690375725233794,0.0010396293060377121,0.001716007048008947,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),hosp:primary,C vs A,auprc,0.0012011213823278771,6.484061650741534e-4,0.0016963689509012446,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),hosp:excluding_ckd,B vs A,log_loss,5.6322771668337716e-5,3.172126867239232e-5,8.092427466428311e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,B vs A,brier,6.33917922118107e-6,2.408511391388435e-6,1.0269847050973706e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,B vs A,log_loss_relative_pct,0.04306152345564223,0.024252466888926908,0.06187058002235756,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,B vs A,brier_relative_pct,0.021130944185980924,0.008028503061196943,0.034233385310764905,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,B vs A,auroc,4.912580039672099e-4,2.872595192848715e-4,7.33531981452032e-4,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),hosp:excluding_ckd,B vs A,auprc,3.44711082047755e-4,1.4685124787811173e-4,5.940556184951068e-4,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs B,log_loss,5.291070588472002e-6,-2.412199244422642e-6,1.2994340421366646e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs B,brier,5.9220392690976e-7,-5.852859353474354e-7,1.7696937891669555e-6,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs B,log_loss_relative_pct,0.004047025879813651,-0.0018450392233879803,0.009939090983015281,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs B,brier_relative_pct,0.0019744627085705466,-0.001951397484350753,0.005900322901491846,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs B,auroc,5.836772669687296e-5,-2.9007857363760877e-5,1.4697360941897666e-4,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs B,auprc,3.1227114134183e-5,-2.5082907527509273e-5,9.612448355691732e-5,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs A,log_loss,6.16138422568096e-5,3.590634362405112e-5,8.732134088956809e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs A,brier,6.93138314809083e-6,2.8512238807117424e-6,1.1011542415469918e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs A,log_loss_relative_pct,0.047106806624457306,0.02745216210733154,0.06676145114158308,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs A,brier_relative_pct,0.02310498967193855,0.009504235577335608,0.03670574376654149,per-person paired delta (normal)
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs A,auroc,5.496257306640828e-4,3.234246875266578e-4,8.255673760900808e-4,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),hosp:excluding_ckd,C vs A,auprc,3.75938196181938e-4,1.579035076957572e-4,6.358445807385267e-4,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:primary,B vs A,log_loss,4.610189648158369e-5,2.4542127024975777e-5,6.76616659381916e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,B vs A,brier,1.8602000653645839e-6,8.143717493616446e-8,3.638962955793003e-6,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,B vs A,log_loss_relative_pct,0.6565013738014045,0.34948540814023576,0.9635173394625731,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,B vs A,brier_relative_pct,0.1765789774305097,0.007730401338438334,0.34542755352258103,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,B vs A,auroc,0.001268606500792524,3.2746456696503e-4,0.0025728643780288697,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:primary,B vs A,auprc,0.0037479837803961365,0.0014984014257162497,0.006854115035971178,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:primary,C vs B,log_loss,1.2306271312892038e-5,2.76472761080682e-7,2.4336069864703394e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,C vs B,brier,6.669040774925392e-7,-6.670622468513563e-7,2.0008704018364347e-6,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,C vs B,log_loss_relative_pct,0.17640215362777356,0.003963051783439667,0.3488412554721074,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,C vs B,brier_relative_pct,0.06341766763075882,-0.06343270837224678,0.19026804363376443,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,C vs B,auroc,3.904798046707736e-4,-4.8161555900089745e-4,0.0014177653018624561,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:primary,C vs B,auprc,0.0013732742576158252,-0.0011505577567750014,0.00418253352229116,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:primary,C vs A,log_loss,5.840816779447571e-5,3.3706729585379143e-05,8.310960600357227e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,C vs A,brier,2.527104142857123e-6,2.499811553472658e-7,4.804227130366981e-6,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,C vs A,log_loss_relative_pct,0.8317454448671963,0.4799914096374218,1.1834994800969705,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,C vs A,brier_relative_pct,0.23988466279225584,0.023729392128295747,0.456039933456216,per-person paired delta (normal)
+paired improvement (positive = first model better),death:primary,C vs A,auroc,0.0016590863054632976,3.5758920532149023e-4,0.00323396413139643,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:primary,C vs A,auprc,0.005121258038011962,0.002101911847383508,0.008824613394454896,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:excluding_ckd,B vs A,log_loss,2.038043351670527e-5,6.949553029389133e-6,3.3811314004021405e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,B vs A,brier,6.44909242353993e-7,-2.0337344116559392e-7,1.49319192587358e-6,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,B vs A,log_loss_relative_pct,0.30247195500798507,0.1031403424028252,0.501803567613145,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,B vs A,brier_relative_pct,0.06490675024666541,-0.02046847569490159,0.1502819761882324,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,B vs A,auroc,9.235859087918241e-4,6.172813533162904e-5,0.0019592883816816208,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:excluding_ckd,B vs A,auprc,0.002165863769651749,3.447826083581045e-4,0.005530538573223355,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:excluding_ckd,C vs B,log_loss,3.0052148197786936e-6,-2.5533953546380494e-6,8.563824994195437e-6,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,C vs B,brier,4.4375814548753385e-8,-2.3366950818465148e-7,3.2242113728215826e-7,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,C vs B,log_loss_relative_pct,0.044736584825973015,-0.038010656384764724,0.12748382603671074,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,C vs B,brier_relative_pct,0.004469094935264136,-0.023532891196991534,0.03247108106751981,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,C vs B,auroc,2.4829311877971882e-5,-6.073088270932393e-4,6.218882068769891e-4,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:excluding_ckd,C vs B,auprc,-1.3768323311142555e-4,-0.0010672181748290284,3.7454338092736655e-4,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:excluding_ckd,C vs A,log_loss,2.338564833648398e-5,9.052482840824185e-6,3.771881383214377e-5,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,C vs A,brier,6.892850569027463e-7,-2.0608630219299963e-7,1.5846564159984924e-6,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,C vs A,log_loss_relative_pct,0.3470732242112315,0.13435053676831596,0.5597959116541469,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,C vs A,brier_relative_pct,0.06937294443764162,-0.02074151100219074,0.15948739987747398,per-person paired delta (normal)
+paired improvement (positive = first model better),death:excluding_ckd,C vs A,auroc,9.48415220669796e-4,-1.81177254883097e-4,0.002393786813027438,"stratified bootstrap, 200 reps"
+paired improvement (positive = first model better),death:excluding_ckd,C vs A,auprc,0.0020281805365403235,4.1916648523857404e-4,0.005262107480774708,"stratified bootstrap, 200 reps"

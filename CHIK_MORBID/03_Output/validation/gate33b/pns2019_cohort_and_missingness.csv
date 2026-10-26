@@ -1,0 +1,16 @@
+item,n,pct_of_selected_adults
+Selected-adult analytic population (M001=='1'),90846,100
+"  .. age < 18 (preserved, not in 18+ or 20+ analysis)",2315,2.55
+  .. age 18-19 (preserved separately per instruction),2021,2.22
+  .. age 18+ (official-estimate reproduction population),88531,97.45
+  .. age 20+ (main analysis population),86510,95.23
+"DM (Q03001) known (yes/no, pregnancy-only resolved to no)",84073,92.54
+"DM unknown/unanswered (Q03001 in {9,NA})",6773,7.46
+HTN (Q00201) known,88736,97.68
+HTN unknown/unanswered,2110,2.32
+CKD (Q124) known,90846,100
+CKD unknown/unanswered,0,0
+All three (DM/HTN/CKD) known -> profile-eligible,83296,91.69
+Profile-eligible AND age 20+,80228,88.31
+Pregnancy-only HTN reclassified to 'no' (of all selected adults),1277,1.406
+Pregnancy-only DM reclassified to 'no' (of all selected adults),273,0.301

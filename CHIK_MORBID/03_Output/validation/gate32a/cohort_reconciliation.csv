@@ -1,0 +1,11 @@
+step,description,n,pct_of_eligible,notes
+1,Core-three eligible population,1074796,100,is_confirmed_chik & year>=2017 & age 0-100 & sex known & DM/HTN/CKD all explicit yes/no
+2,Hospitalisation outcome recorded (yes/no),776072,72.21,R_hosp=1; matches 12_core3_condition_specific_rr.R's hosp_cohort exactly
+3,"Hospitalisation outcome NOT usable (R_hosp=0), total",298724,27.79,sum of rows 4+5 below
+4,"  .. of which: explicit 'unknown' (HOSPITALIZ=9, Ignorado)",25378,2.36,field was actively answered 'do not know'
+5,  .. of which: blank / never recorded (HOSPITALIZ missing),273346,25.43,field was never completed - distinct mechanism from row 4
+6,Hospitalisation events among recorded (hosp-known) cohort,25363,3.27,pct_of_eligible column here is instead pct hospitalised WITHIN the known cohort
+7,uf_residence missing within eligible cohort,0,0,"state random-effect covariate used by fit_hosp_core3's s(uf_residence,bs='re')"
+8,uf_residence missing within hospitalisation-known cohort,0,0,"if >0, fit_hosp_core3's actual fitted N would be LESS than row 2's N"
+9,age_years / sex / year missing within hospitalisation-known cohort,0,0,all should be 0 by construction (eligibility already requires these non-missing)
+10,Expected fit_hosp_core3 fitted-model N (eligible hosp-known minus any covariate NA),776072,72.21,CONCLUSION: see VALIDATION_3_2A.md Finding 1 -- equals row 2 exactly if row 8 = 0

@@ -1,0 +1,3 @@
+threshold,n_strata_total,n_strata_below_min_denom,n_eligible_in_below_min_denom_strata,n_strata_included_primary_rule,n_strata_included_if_rule_ignored,n_strata_gained_if_rule_ignored
+70pct,242,66,2626,120,180,60
+80pct,242,66,2626,85,133,48

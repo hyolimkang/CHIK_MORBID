@@ -46,3 +46,9 @@ CHIK_MORBID/01_Data/descriptive_appendix/*.csv
 # CHIK_MORBID/03_Output/tables/
 # CHIK_MORBID/CHIK_MORBID.Rproj
 # README.md
+
+# Individual-level data in subfolders (e.g. pre-Gate-3.1 snapshot) - never commit
+CHIK_MORBID/01_Data/**/chik_sinan_individual_*.rds
+# Per-person / per-draw analysis caches (large, regenerable by 02_Script/)
+CHIK_MORBID/03_Output/**/cv_out_of_fold_predictions.rds
+CHIK_MORBID/03_Output/**/*_draws.rds

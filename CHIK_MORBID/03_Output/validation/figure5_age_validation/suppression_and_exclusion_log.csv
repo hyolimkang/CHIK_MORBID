@@ -1,0 +1,25 @@
+age_group,core_profile,n_cases,n_deaths,none_deaths,estimate_status,figure_5A,figure_5B
+0-14,DM,373,0,83,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+0-14,HTN,557,0,83,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+0-14,CKD,167,1,83,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted
+0-14,DM+HTN,137,0,83,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+0-14,DM+CKD,10,0,83,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+0-14,HTN+CKD,18,0,83,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+0-14,DM+HTN+CKD,97,0,83,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+15-39,DM,2679,5,113,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted
+15-39,CKD,536,1,113,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted
+15-39,DM+HTN,1163,5,113,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted
+15-39,DM+CKD,50,0,113,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+15-39,HTN+CKD,107,1,113,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted
+15-39,DM+HTN+CKD,414,0,113,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+40-59,DM,6895,7,98,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted
+40-59,CKD,559,0,98,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+40-59,DM+CKD,120,0,98,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+40-59,HTN+CKD,332,3,98,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted
+40-59,DM+HTN+CKD,452,3,98,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted
+60-74,DM,4207,9,91,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted
+60-74,CKD,269,0,91,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+60-74,DM+CKD,77,0,91,Suppressed: no observed deaths,Not plotted; labelled '0 deaths',Not plotted
+60-74,HTN+CKD,252,6,91,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted
+60-74,DM+HTN+CKD,383,8,91,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted
+75+,DM+CKD,56,4,137,Flagged: sparse (1-9 deaths),Plotted as open grey marker,Not plotted

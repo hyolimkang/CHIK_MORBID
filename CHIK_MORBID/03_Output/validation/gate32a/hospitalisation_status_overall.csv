@@ -1,0 +1,5 @@
+hospitalised,hosp_missing_type,n,pct_of_eligible
+no,recorded,750709,69.847
+NA,blank_unrecorded,273346,25.432
+unknown,explicit_unknown,25378,2.361
+yes,recorded,25363,2.36

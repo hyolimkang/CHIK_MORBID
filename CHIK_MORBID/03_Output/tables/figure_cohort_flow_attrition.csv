@@ -5,4 +5,4 @@
 "Valid age and sex",1076401,1074994,1407,"Invalid/missing age or sex"
 "DM, HTN, and CKD status known (core-3 complete case)",1074994,1074796,198,"At least one core-condition field unknown/missing"
 "Hospitalisation cohort: status known",1074796,776072,298724,"Hospitalisation status unknown"
-"Mortality cohort: chikungunya death status known",1074796,1074796,0,"Chikungunya death status unknown"
+"Mortality cohort: chikungunya death status known",1074796,983947,90849,"Chikungunya death status unknown"

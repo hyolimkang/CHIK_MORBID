@@ -1,0 +1,13 @@
+outcome,test,statistic,df,p_value
+hosp,"B vs A: count levels 1 = 2 = 3 (Wald, Vp)",208.21625291859402,2,6.115263252074437e-46
+hosp,"C vs B: one-condition profiles equal, DM = HTN = CKD (Wald, Vp)",59.36871245771551,2,1.2830627330890452e-13
+hosp,"C vs B: two-condition profiles equal, DM+HTN = DM+CKD = HTN+CKD (Wald, Vp)",87.5227479043217,2,9.878176280425795e-20
+hosp,"C vs B: joint within-count homogeneity (Wald, Vp)",146.73284836429121,4,1.0203371988574052e-30
+hosp,B vs A: approximate LRT (anova.gam),191.2094505118148,1.997904456104152,2.9995252797893576e-42
+hosp,C vs B: approximate LRT (anova.gam),126.55436840062612,3.995023578288965,2.1041754974407323e-26
+death,"B vs A: count levels 1 = 2 = 3 (Wald, Vp)",111.7686327623517,2,5.367224616229497e-25
+death,"C vs B: one-condition profiles equal, DM = HTN = CKD (Wald, Vp)",20.812889585013714,2,3.0236982626325712e-5
+death,"C vs B: two-condition profiles equal, DM+HTN = DM+CKD = HTN+CKD (Wald, Vp)",17.141874566787717,2,1.8953491860086176e-4
+death,"C vs B: joint within-count homogeneity (Wald, Vp)",37.9706413500173,4,1.1362950500915924e-7
+death,B vs A: approximate LRT (anova.gam),93.23709402797431,1.9776107029756531,5.3974660241438116e-21
+death,C vs B: approximate LRT (anova.gam),31.064169280542046,4.020364638417959,3.0433938501254183e-6

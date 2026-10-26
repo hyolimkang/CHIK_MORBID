@@ -1,0 +1,27 @@
+item,value
+Source file,01_Data/gbd_prevalence.csv
+Total rows in file (all causes/locations/years),"53,856"
+Distinct years present in the ENTIRE file,2023
+Distinct locations in the file,204
+Brazil present?,TRUE
+Distinct sex_name values in the file,Both
+Distinct measure_name values,Prevalence
+Distinct metric_name values,Rate
+cause_name value(s) matching kidney/renal,Chronic kidney disease
+CKD stage-specific cause_name entries present?,"NO - only one aggregate 'Chronic kidney disease' cause exists; no stage/etiology-specific CKD entries (e.g. 'CKD due to diabetes', 'CKD stage 3-5') found in this extract"
+---- Brazil / Both-sex / Prevalence / Rate / Chronic kidney disease slice ----,----
+Rows in this exact slice (before age-band filtering),44
+Distinct years in this slice,2023
+Is the script's extraction missing an explicit year filter?,"YES, technically - 29_background_prevalence_core3_brazil.R (line ~192) filters on measure/metric/location/sex/cause but not on `year`"
+Does this currently cause duplicate rows per age band?,"NO - the entire source file contains only ONE year (2023) for every row, so the missing year filter has no observable effect right now"
+"Distinct raw age_name categories in this slice (includes overlapping GBD aggregations e.g. '20+ years','50-74 years')",44
+"Bands actually used downstream (29_'s `keep_age`, a clean non-overlapping 5-year grid)",20
+Matched rows after restricting to `keep_age`,20
+Any `keep_age` band missing from the matched set?,NONE
+Any duplicate band after the `keep_age` restriction?,0
+Units,"val/upper/lower are GBD 'Rate' metric = per 100,000 population; 29_ converts via prevalence = val/1e5 (CORRECT)"
+Implausible values (<=0 or >100000 per 100k)?,0
+Missing val/upper/lower in this slice?,"val=0, upper=0, lower=0"
+population_group_name value(s),All Population
+"Minimum/maximum matched prevalence (proportion, 20-band grid)","min=0.00022 (<5), max=0.7295 (95+)"
+GBD release/version identifiable from this file?,NOT EXPLICITLY - no GBD round/version column in this CSV extract; year=2023 is the only temporal identifier present. The specific GBD study round (e.g. GBD 2021 vs a later round) this corresponds to is UNRESOLVED from the local file alone and should be confirmed against the original IHME download metadata if this matters for citation.

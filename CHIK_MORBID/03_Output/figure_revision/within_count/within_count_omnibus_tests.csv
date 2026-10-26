@@ -1,0 +1,11 @@
+outcome,test,method,statistic,df,p_value,max_abs_residual_B_on_C,nested
+hosp,A. One-condition heterogeneity: DM = HTN = CKD,"Wald test on adjusted log-odds, Bayesian covariance Vp",59.36871245771551,2,1.2830627330890452e-13,4.39606523983285e-9,TRUE
+hosp,B. Two-condition heterogeneity: DM+HTN = DM+CKD = HTN+CKD,"Wald test on adjusted log-odds, Bayesian covariance Vp",87.5227479043217,2,9.878176280425795e-20,4.39606523983285e-9,TRUE
+hosp,"C. Profile beyond count, joint (A + B)","Wald test on adjusted log-odds, Bayesian covariance Vp",146.73284836429121,4,1.0203371988574052e-30,4.39606523983285e-9,TRUE
+hosp,"C. Profile beyond count, approximate LRT count vs profile model","mgcv anova.gam (models nested in parametric terms; smoothing parameters re-estimated, so approximate)",126.55436840062612,3.995023578288965,2.1041754974407323e-26,4.39606523983285e-9,TRUE
+hosp,"C. Profile beyond count, AIC difference (profile minus count)",AIC,-118.57548675779253,NA,NA,4.39606523983285e-9,TRUE
+death,A. One-condition heterogeneity: DM = HTN = CKD,"Wald test on adjusted log-odds, Bayesian covariance Vp",20.81288958501371,2,3.0236982626325766e-5,1.2242207636446444e-8,TRUE
+death,B. Two-condition heterogeneity: DM+HTN = DM+CKD = HTN+CKD,"Wald test on adjusted log-odds, Bayesian covariance Vp",17.141874566787717,2,1.8953491860086176e-4,1.2242207636446444e-8,TRUE
+death,"C. Profile beyond count, joint (A + B)","Wald test on adjusted log-odds, Bayesian covariance Vp",37.97064135001729,4,1.1362950500916001e-7,1.2242207636446444e-8,TRUE
+death,"C. Profile beyond count, approximate LRT count vs profile model","mgcv anova.gam (models nested in parametric terms; smoothing parameters re-estimated, so approximate)",31.064169280542046,4.020364638417959,3.0433938501254183e-6,1.2242207636446444e-8,TRUE
+death,"C. Profile beyond count, AIC difference (profile minus count)",AIC,-23.049558216436708,NA,NA,1.2242207636446444e-8,TRUE

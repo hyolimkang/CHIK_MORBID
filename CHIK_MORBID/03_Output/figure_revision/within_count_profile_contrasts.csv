@@ -1,0 +1,25 @@
+outcome,contrast_type,n_conditions,contrast,rr,rr_lower,rr_upper,events_a,events_b
+hosp,pairwise within count,1,DM vs HTN,1.1388418624637775,1.0490753081430733,1.2317587982425977,598,2756
+hosp,pairwise within count,1,CKD vs HTN,1.8996315406346604,1.599820112296261,2.2393276498478834,124,2756
+hosp,pairwise within count,1,CKD vs DM,1.6680380334149167,1.3961995741183333,1.991907897135371,124,598
+hosp,pairwise within count,2,DM+CKD vs DM+HTN,1.758959713240838,1.2448042776323702,2.446645418570295,27,1447
+hosp,pairwise within count,2,HTN+CKD vs DM+HTN,2.1872329581152563,1.8468563090210364,2.576417009789706,131,1447
+hosp,pairwise within count,2,HTN+CKD vs DM+CKD,1.2434809857500009,0.8654097516038058,1.8256151975991006,131,27
+hosp,profile vs its count-group average (model C),1,DM vs average of 1 -condition profiles,1.098081112155931,1.0267397053783947,1.1712946453656479,598,3478
+hosp,profile vs its count-group average (model C),1,HTN vs average of 1 -condition profiles,0.9642085950197998,0.949285872181099,0.9786881909032399,2756,3478
+hosp,profile vs its count-group average (model C),1,CKD vs average of 1 -condition profiles,1.8316410588506438,1.5537728800713118,2.146077745584698,124,3478
+hosp,profile vs its count-group average (model C),2,DM+HTN vs average of 2 -condition profiles,0.9555850497256896,0.94252165752327,0.967313720749973,1447,1605
+hosp,profile vs its count-group average (model C),2,DM+CKD vs average of 2 -condition profiles,1.680835605042731,1.1935172705708317,2.322776710131653,27,1605
+hosp,profile vs its count-group average (model C),2,HTN+CKD vs average of 2 -condition profiles,2.0900871150422344,1.783688347481335,2.4316008613167464,131,1605
+death,pairwise within count,1,DM vs HTN,1.525690565966589,1.1434619522442442,2.068171972826255,53,228
+death,pairwise within count,1,CKD vs HTN,3.172958903002121,1.7815789924524634,5.495541323259733,12,228
+death,pairwise within count,1,CKD vs DM,2.0796870438744035,1.1508238051932582,3.763092728197535,12,53
+death,pairwise within count,2,DM+CKD vs DM+HTN,1.9628077249554146,0.7095992727276235,5.0511284147865645,4,181
+death,pairwise within count,2,HTN+CKD vs DM+HTN,2.4971760592782415,1.591858803435064,3.8972336850112534,22,181
+death,pairwise within count,2,HTN+CKD vs DM+CKD,1.2722469081045444,0.4511342917269002,3.91195988274175,22,4
+death,profile vs its count-group average (model C),1,DM vs average of 1 -condition profiles,1.3618040713025548,1.082986041586604,1.7137927485210334,53,293
+death,profile vs its count-group average (model C),1,HTN vs average of 1 -condition profiles,0.8925820881902057,0.8201442936006413,0.9513184681665561,228,293
+death,profile vs its count-group average (model C),1,CKD vs average of 1 -condition profiles,2.8321262833833374,1.6334860554926702,4.768736431301496,12,293
+death,profile vs its count-group average (model C),2,DM+HTN vs average of 2 -condition profiles,0.946175426346816,0.9002239797567708,0.9765043131363833,181,207
+death,profile vs its count-group average (model C),2,DM+CKD vs average of 2 -condition profiles,1.8571604359965133,0.6746938430350806,4.607502734422902,4,207
+death,profile vs its count-group average (model C),2,HTN+CKD vs average of 2 -condition profiles,2.3627666225506516,1.5558363851791677,3.5613612574928175,22,207

@@ -1,0 +1,26 @@
+"check","expected","observed","pass"
+"Eligible core-3 population",1074796,1074796,TRUE
+"Hospitalisation known",776072,776072,TRUE
+"Hospitalisation unknown",298724,298724,TRUE
+"Mortality known",983947,983947,TRUE
+"Mortality unknown",90849,90849,TRUE
+"Hospitalisation known + unknown = eligible",1074796,1074796,TRUE
+"Mortality known + unknown = eligible",1074796,1074796,TRUE
+"Hospitalisations",25363,25363,TRUE
+"Chikungunya-attributed deaths",1050,1050,TRUE
+"Hosp: female + male = N",776072,776072,TRUE
+"Death: female + male = N",983947,983947,TRUE
+"Hosp: sum of 8 profiles = N",776072,776072,TRUE
+"Death: sum of 8 profiles = N",983947,983947,TRUE
+"Hosp: DM = sum of DM-containing profiles",38661,38661,TRUE
+"Hosp: HTN = sum of HTN-containing profiles",93530,93530,TRUE
+"Hosp: CKD = sum of CKD-containing profiles",3739,3739,TRUE
+"Death: DM = sum of DM-containing profiles",45529,45529,TRUE
+"Death: HTN = sum of HTN-containing profiles",110350,110350,TRUE
+"Death: CKD = sum of CKD-containing profiles",4412,4412,TRUE
+"Death profiles = Figure 2 counts (all 8)",8,8,TRUE
+"Hosp profiles = Figure 2 cache (all 8)",8,8,TRUE
+"Death profiles = Figure 2 cache (all 8)",8,8,TRUE
+"Flowchart: hospitalisation cohort",776072,776072,TRUE
+"Flowchart: mortality cohort",983947,983947,TRUE
+"Flowchart: eligible population",1074796,1074796,TRUE

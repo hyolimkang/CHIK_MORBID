@@ -1,0 +1,15 @@
+item,value
+SINAN field sequence #,41
+Official field label (Portuguese),Doenças preexistentes (Doença renal crônica)
+Official field label (English),Pre-existing diseases (Chronic kidney disease)
+Raw variable name,RENAL
+Field type,char(1)
+Allowed raw codes,1 = Sim (Yes); 2 = Não (No)
+Codes NOT in the official dictionary but observed as raw values,9 = Ignorado (Unknown) - used elsewhere in the same comorbidity block's convention; blank/unmapped also occur
+"Explicitly refers to pre-existing (chronic) disease, not acute injury?","YES - field label explicitly says 'crônica' (chronic); 'insuficiência renal aguda' (acute renal failure) is a distinct, unrelated ICD-10 syndrome category under field 2 (id_agravo), not this field"
+CKD stage / eGFR / albuminuria / dialysis status available?,NO - not present anywhere in the SINAN chikungunya dictionary; field 41 is a single undifferentiated yes/no checkbox
+Cleaning-script mapping (02_clean_chik_sinan_brazil.R),"renal_disease = recode(RENAL, map_sim_nao); map_sim_nao = c(`1`='yes', `2`='no', `9`='unknown')"
+recode() NA-handling,"out[x==''|is.na(x)] <- NA_character_ - blank/unmapped -> NA_character_, explicit code 9 -> the string 'unknown' (distinct from NA)"
+Model indicator (12_core3_condition_specific_rr.R),ckd = as.integer(renal_disease == 'yes')
+"Core-3 eligibility filter (12_, add_core3())","dplyr::if_all(c('diabetes','hypertension','renal_disease'), ~ .x %in% c('no','yes')) - records with renal_disease=='unknown' OR NA are excluded from the eligible cohort, identically to DM/HTN"
+Coding discrepancy between cleaning script and GAM?,"NONE FOUND - renal_disease is already a clean 'yes'/'no'/'unknown'/NA factor from the NA-safe recode() helper before ckd is derived; `ckd==as.integer(renal_disease=='yes')` is evaluated only after the complete-case filter already requires renal_disease %in% c('no','yes'), so no NA-propagation risk exists at that point (unlike the Gate 3.1 EVOLUCAO bug pattern, which used a bare `==` BEFORE any completeness filter)."

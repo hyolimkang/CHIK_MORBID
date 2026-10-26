@@ -1,0 +1,4 @@
+condition,denominator,n,prevalence
+dm,condition-specific (Gate 3.3B style),80731,8.4986
+htn,condition-specific (Gate 3.3B style),85044,25.2758
+ckd,condition-specific (Gate 3.3B style),86510,1.5015

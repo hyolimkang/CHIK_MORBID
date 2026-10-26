@@ -1,0 +1,29 @@
+"condition_key","condition","final_role","evidence_source_type","evidence_family_count","workbook_outcomes","evidence_strength","outcome_label","plot_size"
+"autoimmune","Autoimmune disease","SECONDARY","Evidence synthesis",0,,"Insufficient","Sparse",0.6
+"autoimmune","Autoimmune disease","SECONDARY","Independent primary evidence",0,,"Insufficient","Sparse",0.6
+"autoimmune","Autoimmune disease","SECONDARY","Overlapping Brazilian evidence",2,"H; HD","Limited","H/D
+limited",2
+"ckd","Chronic kidney disease","CORE","Evidence synthesis",4,"D; S; SD","Supported","H/D",4
+"ckd","Chronic kidney disease","CORE","Independent primary evidence",2,"HSD; SD","Limited","H
+limited",2
+"ckd","Chronic kidney disease","CORE","Overlapping Brazilian evidence",3,"D; H; HD","Supported","H/D",3
+"diabetes","Diabetes mellitus","CORE","Evidence synthesis",4,"D; HS; S","Supported","S/D",4
+"diabetes","Diabetes mellitus","CORE","Independent primary evidence",3,"HSD; SD","Limited","H/D
+mixed",3
+"diabetes","Diabetes mellitus","CORE","Overlapping Brazilian evidence",3,"D; H; HD","Supported","H/D",3
+"haematological","Haematological disease","NOT PRIORITISED","Evidence synthesis",0,,"Insufficient","Sparse",0.6
+"haematological","Haematological disease","NOT PRIORITISED","Independent primary evidence",0,,"Insufficient","Sparse",0.6
+"haematological","Haematological disease","NOT PRIORITISED","Overlapping Brazilian evidence",2,"H; HD","Insufficient","Sparse",2
+"hypertension","Hypertension","CORE","Evidence synthesis",3,"D; S","Supported","S/D",3
+"hypertension","Hypertension","CORE","Independent primary evidence",3,"HSD; SD","Limited","H/S/D
+mixed",3
+"hypertension","Hypertension","CORE","Overlapping Brazilian evidence",3,"D; H; HD","Supported","H/D",3
+"liver","Hepatopathy / liver disease","SECONDARY","Evidence synthesis",1,"D","Limited","D
+limited",1
+"liver","Hepatopathy / liver disease","SECONDARY","Independent primary evidence",0,,"Insufficient","Sparse",0.6
+"liver","Hepatopathy / liver disease","SECONDARY","Overlapping Brazilian evidence",2,"H; HD","Limited","D
+limited",2
+"peptic","Peptic ulcer disease","NOT PRIORITISED","Evidence synthesis",0,,"Insufficient","Sparse",0.6
+"peptic","Peptic ulcer disease","NOT PRIORITISED","Independent primary evidence",0,,"Insufficient","Sparse",0.6
+"peptic","Peptic ulcer disease","NOT PRIORITISED","Overlapping Brazilian evidence",2,"H; HD","Insufficient","H
+uncertain",2

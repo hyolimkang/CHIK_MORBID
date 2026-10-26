@@ -1,0 +1,11 @@
+scenario,model,n_model,n_events_model,converged,fit_failed,n_warnings,warnings_text,n_profile_levels_absent,profile_levels_absent,n_profile_levels_sparse_lt10events
+A,condition_specific,776072,25363,TRUE,FALSE,0,,0,,0
+A,profile,776072,25363,TRUE,FALSE,0,,0,,0
+B,condition_specific,775678,25284,TRUE,FALSE,0,,0,,0
+B,profile,775678,25284,TRUE,FALSE,0,,0,,0
+C1,condition_specific,510051,15971,TRUE,FALSE,0,,0,,0
+C1,profile,510051,15971,TRUE,FALSE,0,,0,,0
+C2,condition_specific,337021,10909,TRUE,FALSE,0,,0,,1
+C2,profile,337021,10909,TRUE,FALSE,0,,0,,1
+D,condition_specific,320945,15134,TRUE,FALSE,0,,0,,0
+D,profile,320945,15134,TRUE,FALSE,0,,0,,0

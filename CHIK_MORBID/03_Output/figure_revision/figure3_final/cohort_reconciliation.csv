@@ -1,0 +1,7 @@
+metric,expected,observed,match
+Core-3 eligible population,1074796,1074796,TRUE
+Hospitalisation outcome-known cohort,776072,776072,TRUE
+Hospitalisations,25363,25363,TRUE
+Hospitalisation outcome missing (% of eligible),NA,27.79,NA
+Mortality outcome-known cohort,983947,983947,TRUE
+Chikungunya-attributed deaths,1050,1050,TRUE

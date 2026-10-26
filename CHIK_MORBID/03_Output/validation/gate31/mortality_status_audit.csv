@@ -1,0 +1,7 @@
+evolution_cat,died_from_chik_current,n,pct_of_cohort,corrected_classification,currently_misclassified
+NA_blank_or_unmapped,FALSE,46113,4.2904,NA (excluded),TRUE
+cured,FALSE,982538,91.4162,FALSE (non-event),FALSE
+death_chik,TRUE,1050,0.0977,TRUE (chik death),FALSE
+death_other,FALSE,359,0.0334,FALSE (non-event; competing risk),FALSE
+death_under_investigation,FALSE,142,0.0132,NA (excluded),TRUE
+unknown,FALSE,44594,4.1491,NA (excluded),TRUE

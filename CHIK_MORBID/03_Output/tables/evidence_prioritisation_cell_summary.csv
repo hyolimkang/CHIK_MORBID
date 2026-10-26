@@ -1,0 +1,31 @@
+"condition_key","condition","final_role","evidence_source_type","evidence_summary","distinct_evidence_family_count"
+"autoimmune","Autoimmune disease","SECONDARY","Evidence synthesis","Sparse",0
+"autoimmune","Autoimmune disease","SECONDARY","Independent primary evidence","No direct
+evidence",0
+"autoimmune","Autoimmune disease","SECONDARY","Overlapping Brazilian evidence","H <U+2191>
+D <U+2191>",2
+"ckd","Chronic kidney disease","CORE","Evidence synthesis","D <U+2191>",4
+"ckd","Chronic kidney disease","CORE","Independent primary evidence","H <U+2191>",2
+"ckd","Chronic kidney disease","CORE","Overlapping Brazilian evidence","H <U+2191>
+D <U+2191>",3
+"diabetes","Diabetes mellitus","CORE","Evidence synthesis","D <U+2191>",4
+"diabetes","Diabetes mellitus","CORE","Independent primary evidence","H <U+2191>
+D imprecise",3
+"diabetes","Diabetes mellitus","CORE","Overlapping Brazilian evidence","H <U+2191>
+D <U+2191>",3
+"haematological","Haematological disease","NOT PRIORITISED","Evidence synthesis","Sparse",0
+"haematological","Haematological disease","NOT PRIORITISED","Independent primary evidence","Sparse",0
+"haematological","Haematological disease","NOT PRIORITISED","Overlapping Brazilian evidence","Sparse",2
+"hypertension","Hypertension","CORE","Evidence synthesis","D <U+2191>",3
+"hypertension","Hypertension","CORE","Independent primary evidence","S <U+2191>; H mixed
+D imprecise",3
+"hypertension","Hypertension","CORE","Overlapping Brazilian evidence","H <U+2191>
+D <U+2191>",3
+"liver","Hepatopathy / liver disease","SECONDARY","Evidence synthesis","Limited",1
+"liver","Hepatopathy / liver disease","SECONDARY","Independent primary evidence","No direct
+evidence",0
+"liver","Hepatopathy / liver disease","SECONDARY","Overlapping Brazilian evidence","D <U+2191>",2
+"peptic","Peptic ulcer disease","NOT PRIORITISED","Evidence synthesis","Sparse",0
+"peptic","Peptic ulcer disease","NOT PRIORITISED","Independent primary evidence","Sparse",0
+"peptic","Peptic ulcer disease","NOT PRIORITISED","Overlapping Brazilian evidence","H mixed /
+no clear increase",2

@@ -1,0 +1,2 @@
+status,reason,next_step
+DEFERRED,"No recording-probability model was fit in Gate 3.2A, so no IPW weights exist yet to summarise.",Compute in Gate 3.2B if warranted.

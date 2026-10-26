@@ -1,0 +1,2 @@
+status,reason,next_step
+DEFERRED,Preliminary recording-probability model and diagnostic IPW weights were explicitly scoped out of Gate 3.2A to prioritise the descriptive missingness audit; see VALIDATION_3_2A.md.,Compute in Gate 3.2B if the descriptive patterns in this report warrant it.
