@@ -1,0 +1,29 @@
+outcome,model,label,aic,delta_aic_vs_H0,total_edf,source
+Hospitalisation,"hospitalisation_H2 (this pipeline, PRIMARY)",hospitalisation_H2,204302.07647624594,NA,81.89460593186054,script 62
+Chikungunya-attributed death,"mortality_H0 (this pipeline, PRIMARY)",mortality_H0,13738.630962814892,NA,43.62678432193598,script 62
+Hospitalisation,H0,"H0: no age interaction, profile + s(age, k=10)",204543.1536002884,0,51.32441254030724,script 52
+Hospitalisation,H0_k20,"H0 with s(age, k=20)",204510.2781548344,-32.87544545397395,57.360654600539696,script 52
+Hospitalisation,H1,"H1: original factor-smooth, s(age, profile, bs='fs', k=10)",204331.8561392558,-211.2974610325764,79.00103645659416,script 52
+Hospitalisation,H2,H2: global s(age) + fs deviations (m=1),204302.07647624591,-241.07712404243648,81.89460593186054,script 52
+Hospitalisation,H3,H3: age-group x profile random effect + s(age),204365.28460633568,-177.86899395269575,74.5830650842928,script 52
+Hospitalisation,H3_fixed,H3 fixed: unpenalised profile x age-group + s(age),204371.49072845705,-171.66287183135864,83.24879533099303,script 52
+Hospitalisation,H1_k5,"H1, k = 5",204475.50938014645,-67.64422014192678,67.33701689203542,script 52
+Hospitalisation,H1_k15,"H1, k = 15",204290.0087298163,-253.1448704720824,86.7708388783735,script 52
+Hospitalisation,H2_k5,"H2, k = 5",204329.52571697577,-213.62788331261257,69.90361272880618,script 52
+Hospitalisation,H2_k15,"H2, k = 15",204284.2585319049,-258.8950683834846,89.4268868393065,script 52
+Hospitalisation,linear,Linear age x profile slopes + s(age),204466.88955618825,-76.26404410012765,58.31433645759451,script 52
+Hospitalisation,H1_sp_x0.25,"H1, profile smoothing parameters x 0.25 (fixed)",204335.68790285735,-207.4656974310055,89.24583487234786,script 52
+Hospitalisation,H1_sp_x4,"H1, profile smoothing parameters x 4 (fixed)",204336.40140571064,-206.7521945777407,68.91775361734408,script 52
+Hospitalisation,H2_sp_x0.25,"H2, profile smoothing parameters x 0.25 (fixed)",204301.54827463452,-241.605325653858,92.98534326846796,script 52
+Hospitalisation,H2_sp_x4,"H2, profile smoothing parameters x 4 (fixed)",204319.54104490744,-223.61255538093977,71.21024851068923,script 52
+Chikungunya-attributed death,no_interaction,No interaction: profile + s(age),13738.630962814892,0,43.62678432193598,script 46
+Chikungunya-attributed death,no_interaction_k20,"No interaction: profile + s(age, k = 20)",13735.419309744726,-3.211653070165994,47.52332689953236,script 46
+Chikungunya-attributed death,fs_original,"Original Figure 5: s(age, profile, bs='fs', k=10)",13723.81362655963,-14.81733625526249,66.38012540019604,script 46
+Chikungunya-attributed death,fs_global,"Global s(age) + fs deviations (m = 1), Pedersen model GS",13705.888109844473,-32.742852970419335,66.72431984514435,script 46
+Chikungunya-attributed death,fs_k5,"fs, k = 5",13758.50871618852,19.877753373628366,56.38111743504892,script 46
+Chikungunya-attributed death,fs_k15,"fs, k = 15",13722.52629382584,-16.10466898905179,68.96606025708537,script 46
+Chikungunya-attributed death,linear_interaction,Linear (log-odds) age x profile + s(age),13737.620811198183,-1.0101516167087539,50.60814877379587,script 46
+Chikungunya-attributed death,band_re,Age-group x profile random effect + s(age),13735.33618852586,-3.2947742890319205,56.498356206267886,script 46
+Chikungunya-attributed death,fs_sp_x0.25,"fs, k = 10, fs smoothing parameters x 0.25 (fixed)",13715.69427574024,-22.936687074652582,74.97180798220533,script 46
+Chikungunya-attributed death,fs_sp_x4,"fs, k = 10, fs smoothing parameters x 4 (fixed)",13738.642549230875,0.011586415983401821,57.589878896611005,script 46
+Chikungunya-attributed death,fs_age15plus,Original fs model refitted on ages 15-100 only,12458.820462009444,-1279.810500805448,58.72898414912454,script 46

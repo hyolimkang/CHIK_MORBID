@@ -1,0 +1,33 @@
+[63 17:12:09] fitting hosp_H0 (n = 776072)
+[63 17:12:26] fitting hosp_H2_k5 (n = 776072)
+[63 17:12:50] fitting hosp_H2_k15 (n = 776072)
+[63 17:13:25] fitting hosp_H2_sp_x0.25 (n = 776072)
+[63 17:13:53] fitting hosp_H2_sp_x4 (n = 776072)
+[63 17:14:22] fitting hosp_H2_age15plus (n = 690232)
+[63 17:14:59] fitting hosp_H2_C1_completeness70 (n = 510051)
+[63 17:15:28] fitting death_fs_original (n = 983947)
+[63 17:16:00] fitting death_fs_global (n = 983947)
+[63 17:16:34] fitting death_H0_k20 (n = 983947)
+   outcome                  model_id target max_abs_log_rr_diff
+1    death              death_H0_k20   full             0.00868
+2    death           death_fs_global   full             0.32327
+3    death         death_fs_original   full             0.37323
+4     hosp                   hosp_H0   full             0.23602
+5     hosp hosp_H2_C1_completeness70     c1             0.07005
+6     hosp         hosp_H2_age15plus  age15             0.10272
+7     hosp               hosp_H2_k15   full             0.01344
+8     hosp                hosp_H2_k5   full             0.04069
+9     hosp          hosp_H2_sp_x0.25   full             0.03667
+10    hosp             hosp_H2_sp_x4   full             0.05543
+   profile_max_diff n_profiles_rr_excludes_1
+1            DM+CKD                        7
+2            DM+CKD                        7
+3           HTN+CKD                        7
+4        DM+HTN+CKD                        7
+5            DM+HTN                        7
+6           HTN+CKD                        7
+7            DM+HTN                        7
+8               HTN                        7
+9            DM+HTN                        7
+10           DM+HTN                        7
+[63 17:16:54] done

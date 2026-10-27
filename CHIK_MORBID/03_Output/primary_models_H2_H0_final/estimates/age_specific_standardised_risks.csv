@@ -1,0 +1,81 @@
+outcome,model_id,age_group,core_profile,n_cases,n_events,n_nonevents,support_category,n_target_age,std_risk_pct,std_risk_lower_pct,std_risk_upper_pct
+Hospitalisation,hospitalisation_H2,0-14,None,84738,6492,78246,Adequate (>=10 events and >=10 non-events),85840,7.616932025942407,7.4527453418288605,7.787181486240829
+Hospitalisation,hospitalisation_H2,0-14,DM,308,25,283,Adequate (>=10 events and >=10 non-events),85840,9.065646465564818,6.7441850817188955,12.129580773480386
+Hospitalisation,hospitalisation_H2,0-14,HTN,452,32,420,Adequate (>=10 events and >=10 non-events),85840,7.517898032564848,5.671695610631902,10.025536309384316
+Hospitalisation,hospitalisation_H2,0-14,CKD,129,24,105,Adequate (>=10 events and >=10 non-events),85840,16.18962915943206,11.803636712698752,22.133146354642715
+Hospitalisation,hospitalisation_H2,0-14,DM+HTN,105,10,95,Adequate (>=10 events and >=10 non-events),85840,10.166719416166373,6.555022054604419,15.522964187530123
+Hospitalisation,hospitalisation_H2,0-14,DM+CKD,8,1,7,Sparse (1-9 events),85840,14.562297625236653,5.765988796401401,31.87712161512855
+Hospitalisation,hospitalisation_H2,0-14,HTN+CKD,15,1,14,Sparse (1-9 events),85840,15.372531385382265,7.728970965138925,27.44601678610959
+Hospitalisation,hospitalisation_H2,0-14,DM+HTN+CKD,85,10,75,Adequate (>=10 events and >=10 non-events),85840,9.673247548775805,6.087958338371826,15.330409376161015
+Hospitalisation,hospitalisation_H2,15-39,None,293837,6876,286961,Adequate (>=10 events and >=10 non-events),305029,2.3633285098919306,2.31211072981284,2.4160573155404084
+Hospitalisation,hospitalisation_H2,15-39,DM,2206,113,2093,Adequate (>=10 events and >=10 non-events),305029,5.5158699906016775,4.636442369514778,6.541413298643012
+Hospitalisation,hospitalisation_H2,15-39,HTN,7086,281,6805,Adequate (>=10 events and >=10 non-events),305029,4.422552173520174,3.897700729788102,5.042642509603515
+Hospitalisation,hospitalisation_H2,15-39,CKD,441,33,408,Adequate (>=10 events and >=10 non-events),305029,7.812158924818377,6.017092715961825,10.179681666667658
+Hospitalisation,hospitalisation_H2,15-39,DM+HTN,1003,57,946,Adequate (>=10 events and >=10 non-events),305029,6.314378524755669,4.934973582644659,8.190532139922677
+Hospitalisation,hospitalisation_H2,15-39,DM+CKD,38,1,37,Sparse (1-9 events),305029,8.434521849975221,4.259084586376414,16.19808269197829
+Hospitalisation,hospitalisation_H2,15-39,HTN+CKD,87,12,75,Adequate (>=10 events and >=10 non-events),305029,9.1825974656991,5.749697043360287,14.457532434466414
+Hospitalisation,hospitalisation_H2,15-39,DM+HTN+CKD,331,15,316,Adequate (>=10 events and >=10 non-events),305029,5.72357585044207,4.072767455449708,8.111323487471997
+Hospitalisation,hospitalisation_H2,40-59,None,200502,4106,196396,Adequate (>=10 events and >=10 non-events),245474,2.0333955331470874,1.9771535918639085,2.0948396627248327
+Hospitalisation,hospitalisation_H2,40-59,DM,5710,185,5525,Adequate (>=10 events and >=10 non-events),245474,3.2307844338595135,2.846075312629221,3.6738183255334844
+Hospitalisation,hospitalisation_H2,40-59,HTN,29481,827,28654,Adequate (>=10 events and >=10 non-events),245474,2.8616667504835167,2.683520722468986,3.0631839872279887
+Hospitalisation,hospitalisation_H2,40-59,CKD,477,24,453,Adequate (>=10 events and >=10 non-events),245474,4.847964729456378,3.5756879532369807,6.585146989317916
+Hospitalisation,hospitalisation_H2,40-59,DM+HTN,8557,317,8240,Adequate (>=10 events and >=10 non-events),245474,3.803047801776694,3.4230826573650903,4.254195903879964
+Hospitalisation,hospitalisation_H2,40-59,DM+CKD,101,8,93,Sparse (1-9 events),245474,7.197591204946298,4.366698126181987,11.808243230595917
+Hospitalisation,hospitalisation_H2,40-59,HTN+CKD,283,19,264,Adequate (>=10 events and >=10 non-events),245474,7.676570978383501,5.654040807049158,10.509380408198378
+Hospitalisation,hospitalisation_H2,40-59,DM+HTN+CKD,363,25,338,Adequate (>=10 events and >=10 non-events),245474,6.726704176616237,5.095691611181199,8.941578479919253
+Hospitalisation,hospitalisation_H2,60-74,None,69404,1720,67684,Adequate (>=10 events and >=10 non-events),106721,2.4818202291007903,2.379066678810894,2.5942104332847107
+Hospitalisation,hospitalisation_H2,60-74,DM,3573,154,3419,Adequate (>=10 events and >=10 non-events),106721,4.142600572761711,3.6395477331574395,4.745071651481725
+Hospitalisation,hospitalisation_H2,60-74,HTN,21944,846,21098,Adequate (>=10 events and >=10 non-events),106721,3.8406607038089344,3.622685914104303,4.07934232534249
+Hospitalisation,hospitalisation_H2,60-74,CKD,231,15,216,Adequate (>=10 events and >=10 non-events),106721,8.24319665951337,6.1334835254903055,11.189523910239627
+Hospitalisation,hospitalisation_H2,60-74,DM+HTN,10936,602,10334,Adequate (>=10 events and >=10 non-events),106721,5.334778587243543,4.963758447175555,5.73159356131168
+Hospitalisation,hospitalisation_H2,60-74,DM+CKD,70,8,62,Sparse (1-9 events),106721,10.248182363563368,6.6215067948109665,15.565177062525212
+Hospitalisation,hospitalisation_H2,60-74,HTN+CKD,238,41,197,Adequate (>=10 events and >=10 non-events),106721,14.511108023376366,11.445290649778794,18.17890164858485
+Hospitalisation,hospitalisation_H2,60-74,DM+HTN+CKD,325,52,273,Adequate (>=10 events and >=10 non-events),106721,13.777654624006768,11.146472099303649,17.149897127977546
+Hospitalisation,hospitalisation_H2,75+,None,19629,940,18689,Adequate (>=10 events and >=10 non-events),33008,4.877131076927631,4.614152755676057,5.174787319897297
+Hospitalisation,hospitalisation_H2,75+,DM,994,121,873,Adequate (>=10 events and >=10 non-events),33008,11.945529332473745,10.273932609588034,13.846418771280916
+Hospitalisation,hospitalisation_H2,75+,HTN,8131,770,7361,Adequate (>=10 events and >=10 non-events),33008,9.383862108475038,8.83979353215176,9.993486882083506
+Hospitalisation,hospitalisation_H2,75+,CKD,101,28,73,Adequate (>=10 events and >=10 non-events),33008,22.49509458788822,16.82990247468027,29.600053615635435
+Hospitalisation,hospitalisation_H2,75+,DM+HTN,3737,461,3276,Adequate (>=10 events and >=10 non-events),33008,12.474139012869474,11.552624852805355,13.485104648265779
+Hospitalisation,hospitalisation_H2,75+,DM+CKD,45,9,36,Sparse (1-9 events),33008,21.569877832024048,14.00789050422661,31.64456717792187
+Hospitalisation,hospitalisation_H2,75+,HTN+CKD,205,58,147,Adequate (>=10 events and >=10 non-events),33008,26.372392422860347,21.68074249251741,31.4427147476718
+Hospitalisation,hospitalisation_H2,75+,DM+HTN+CKD,166,44,122,Adequate (>=10 events and >=10 non-events),33008,26.62048563055833,21.50825698315092,32.35624983166216
+Chikungunya-attributed death,mortality_H0,0-14,None,107764,83,107681,Adequate (>=10 events and >=10 non-events),109123,0.07466877880852868,0.06253255789875616,0.0946798827750988
+Chikungunya-attributed death,mortality_H0,0-14,DM,373,0,373,No observed events,109123,0.2886537003011087,0.21155266537160158,0.41521786927896165
+Chikungunya-attributed death,mortality_H0,0-14,HTN,557,0,557,No observed events,109123,0.1886780557445233,0.14879985570382856,0.2509526992520077
+Chikungunya-attributed death,mortality_H0,0-14,CKD,167,1,166,Sparse (1-9 events),109123,0.6047515374777528,0.3387220872058348,1.1226388339676419
+Chikungunya-attributed death,mortality_H0,0-14,DM+HTN,137,0,137,No observed events,109123,0.3793641265695312,0.29485039561987114,0.5114945483263691
+Chikungunya-attributed death,mortality_H0,0-14,DM+CKD,10,0,10,No observed events,109123,0.7505601845935936,0.2706789208129292,1.9902176813070345
+Chikungunya-attributed death,mortality_H0,0-14,HTN+CKD,18,0,18,No observed events,109123,0.9583833299663381,0.609554208740282,1.5901141224049065
+Chikungunya-attributed death,mortality_H0,0-14,DM+HTN+CKD,97,0,97,No observed events,109123,1.2234847821206931,0.8091975443429218,1.8849495484948149
+Chikungunya-attributed death,mortality_H0,15-39,None,374825,113,374712,Adequate (>=10 events and >=10 non-events),388230,0.030456347312943277,0.02627146831534448,0.036695454241105804
+Chikungunya-attributed death,mortality_H0,15-39,DM,2679,5,2674,Sparse (1-9 events),388230,0.11848206408635967,0.08692109367547061,0.164279407770906
+Chikungunya-attributed death,mortality_H0,15-39,HTN,8456,10,8446,Adequate (>=10 events and >=10 non-events),388230,0.07721878349666576,0.06264099245363113,0.09867825740251199
+Chikungunya-attributed death,mortality_H0,15-39,CKD,536,1,535,Sparse (1-9 events),388230,0.25051150289018054,0.14080024615961018,0.4643646691255286
+Chikungunya-attributed death,mortality_H0,15-39,DM+HTN,1163,5,1158,Sparse (1-9 events),388230,0.15612792815529125,0.12497023929094378,0.20324629936090402
+Chikungunya-attributed death,mortality_H0,15-39,DM+CKD,50,0,50,No observed events,388230,0.3122078134053479,0.1135237832614258,0.8536003777716704
+Chikungunya-attributed death,mortality_H0,15-39,HTN+CKD,107,1,106,Sparse (1-9 events),388230,0.40100180117451656,0.2586631754737579,0.6582552048283775
+Chikungunya-attributed death,mortality_H0,15-39,DM+HTN+CKD,414,0,414,No observed events,388230,0.5157170414372897,0.34401976787967126,0.79576136344395
+Chikungunya-attributed death,mortality_H0,40-59,None,257921,98,257823,Adequate (>=10 events and >=10 non-events),311544,0.03823745815592866,0.033230904611501,0.04541180612366143
+Chikungunya-attributed death,mortality_H0,40-59,DM,6895,7,6888,Sparse (1-9 events),311544,0.14870419555770792,0.11260943039672251,0.20238160468594957
+Chikungunya-attributed death,mortality_H0,40-59,HTN,35152,34,35118,Adequate (>=10 events and >=10 non-events),311544,0.09693026983042656,0.0814330287944715,0.11969190774008812
+Chikungunya-attributed death,mortality_H0,40-59,CKD,559,0,559,No observed events,311544,0.3142592833814697,0.17928479176896334,0.5766733838906637
+Chikungunya-attributed death,mortality_H0,40-59,DM+HTN,10113,23,10090,Adequate (>=10 events and >=10 non-events),311544,0.195925604930969,0.16170263075667882,0.24662144056425203
+Chikungunya-attributed death,mortality_H0,40-59,DM+CKD,120,0,120,No observed events,311544,0.39156718328978435,0.143435205997074,1.048911884137638
+Chikungunya-attributed death,mortality_H0,40-59,HTN+CKD,332,3,329,Sparse (1-9 events),311544,0.502768691692001,0.3275647686115338,0.8067914820548777
+Chikungunya-attributed death,mortality_H0,40-59,DM+HTN+CKD,452,3,449,Sparse (1-9 events),311544,0.6463269503586783,0.42998178096975276,0.9921810234333037
+Chikungunya-attributed death,mortality_H0,60-74,None,89825,91,89734,Adequate (>=10 events and >=10 non-events),133407,0.09425023647329206,0.08219220440293752,0.11055038260593289
+Chikungunya-attributed death,mortality_H0,60-74,DM,4207,9,4198,Sparse (1-9 events),133407,0.3654952110881522,0.2779802210878974,0.48947379163462484
+Chikungunya-attributed death,mortality_H0,60-74,HTN,25723,52,25671,Adequate (>=10 events and >=10 non-events),133407,0.23855867822838772,0.20532771295752164,0.28574454063289123
+Chikungunya-attributed death,mortality_H0,60-74,CKD,269,0,269,No observed events,133407,0.7691616082436403,0.4357656851397203,1.3829490378472682
+Chikungunya-attributed death,mortality_H0,60-74,DM+HTN,12671,67,12604,Adequate (>=10 events and >=10 non-events),133407,0.4809781483042748,0.411451005817527,0.580955125317094
+Chikungunya-attributed death,mortality_H0,60-74,DM+CKD,77,0,77,No observed events,133407,0.9565120003739096,0.3547561186975883,2.529898833503661
+Chikungunya-attributed death,mortality_H0,60-74,HTN+CKD,252,6,246,Sparse (1-9 events),133407,1.224745521554365,0.800847555223633,1.9296195852387146
+Chikungunya-attributed death,mortality_H0,60-74,DM+HTN+CKD,383,8,375,Sparse (1-9 events),133407,1.5688753268720057,1.0594867209997394,2.341662141107009
+Chikungunya-attributed death,mortality_H0,75+,None,26007,137,25870,Adequate (>=10 events and >=10 non-events),41643,0.537321444657426,0.47943842880247367,0.6194585091009696
+Chikungunya-attributed death,mortality_H0,75+,DM,1148,32,1116,Adequate (>=10 events and >=10 non-events),41643,2.021815714851442,1.5782449902502382,2.64941676902693
+Chikungunya-attributed death,mortality_H0,75+,HTN,9624,132,9492,Adequate (>=10 events and >=10 non-events),41643,1.3378546368259836,1.182211873664498,1.5612697992218931
+Chikungunya-attributed death,mortality_H0,75+,CKD,109,10,99,Adequate (>=10 events and >=10 non-events),41643,4.088430821126657,2.417352338582787,6.970059164628747
+Chikungunya-attributed death,mortality_H0,75+,DM+HTN,4295,86,4209,Adequate (>=10 events and >=10 non-events),41643,2.629047957561679,2.295530138594251,3.1210495578815833
+Chikungunya-attributed death,mortality_H0,75+,DM+CKD,56,4,52,Sparse (1-9 events),41643,4.998801882987576,1.9607108629414018,11.558255436900064
+Chikungunya-attributed death,mortality_H0,75+,HTN+CKD,215,12,203,Adequate (>=10 events and >=10 non-events),41643,6.255709162734971,4.272173062156011,9.243949884424058
+Chikungunya-attributed death,mortality_H0,75+,DM+HTN+CKD,189,17,172,Adequate (>=10 events and >=10 non-events),41643,7.796997910493742,5.533804602278906,10.848332577847504

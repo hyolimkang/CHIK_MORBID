@@ -1,0 +1,16 @@
+outcome,model,age_spec,aic_text,delta_text,p_text,status,aic,delta_aic,adult_wald_chisq,adult_wald_df,adult_wald_p,source_model_id
+Hospitalisation,H0,Common age smooth; no profile-by-age interaction,"204,543.2",0 (reference),—,Reference,204543.1536002884,0,NA,NA,NA,H0
+Hospitalisation,H0 (k = 20),More flexible common age smooth; no interaction,"204,510.3",−32.9,—,Sensitivity,204510.2781548344,-32.87544545400306,NA,NA,NA,H0_k20
+Hospitalisation,H1,Separate age smooth for each profile,"204,331.9",−211.3,<0.001,Alternative,204331.8561392558,-211.2974610326055,143.16459646086724,49,3.70228218184884e-11,H1
+Hospitalisation,H2,Common age smooth + penalised profile-specific deviations,"204,302.1",−241.1,<0.001,Selected,204302.07647624591,-241.0771240424947,135.60239110446489,49,4.6561146474965955e-10,H2
+Hospitalisation,H2 (k = 15),"As H2, larger age basis","204,284.3",−258.9,<0.001,Sensitivity,204284.2585319049,-258.8950683835137,129.4974564611669,49,3.418543109232277e-9,H2_k15
+Hospitalisation,H3,Common age smooth + age-group × profile random effects,"204,365.3",−177.9,—,Alternative,204365.28460633568,-177.86899395272485,NA,NA,NA,H3
+Hospitalisation,Linear,Common age smooth + profile-specific linear age slopes,"204,466.9",−76.3,—,Alternative,204466.88955618825,-76.26404410015675,NA,NA,NA,linear
+Chikungunya-attributed death,H0,Common age smooth; no profile-by-age interaction,"13,738.6",0 (reference),—,Selected,13738.630962814892,0,NA,NA,NA,no_interaction
+Chikungunya-attributed death,H0 (k = 20),More flexible common age smooth; no interaction,"13,735.4",−3.2,—,Sensitivity,13735.419309744726,-3.211653070165994,NA,NA,NA,no_interaction_k20
+Chikungunya-attributed death,H1,Separate age smooth for each profile,"13,723.8",−14.8,0.47,Alternative,13723.81362655963,-14.81733625526249,49.039283053035135,49,0.4715512292354269,fs_original
+Chikungunya-attributed death,H1 (k = 5),"As H1, smaller age basis","13,758.5",+19.9,0.001,Sensitivity,13758.50871618852,19.877753373628366,56.579527922676384,28,0.00109262720206341,fs_k5
+Chikungunya-attributed death,H1 (k = 15),"As H1, larger age basis","13,722.5",−16.1,0.51,Sensitivity,13722.52629382584,-16.10466898905179,48.007753477331086,49,0.5133199949478496,fs_k15
+Chikungunya-attributed death,H2,Common age smooth + penalised profile-specific deviations,"13,705.9",−32.7,0.67,Alternative,13705.888109844473,-32.742852970419335,44.19229325186467,49,0.668050894594051,fs_global
+Chikungunya-attributed death,H3,Common age smooth + age-group × profile random effects,"13,735.3",−3.3,—,Alternative,13735.33618852586,-3.2947742890319205,NA,NA,NA,band_re
+Chikungunya-attributed death,Linear,Common age smooth + profile-specific linear age slopes,"13,737.6",−1.0,—,Alternative,13737.620811198183,-1.0101516167087539,NA,NA,NA,linear_interaction

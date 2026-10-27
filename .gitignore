@@ -52,3 +52,7 @@ CHIK_MORBID/01_Data/**/chik_sinan_individual_*.rds
 # Per-person / per-draw analysis caches (large, regenerable by 02_Script/)
 CHIK_MORBID/03_Output/**/cv_out_of_fold_predictions.rds
 CHIK_MORBID/03_Output/**/*_draws.rds
+
+# Fitted primary GAMs embed the individual-level model frame - never commit
+CHIK_MORBID/03_Output/primary_models_H2_H0_final/models/*.rds
+CHIK_MORBID/03_Output/primary_models_H2_H0_final/sensitivity_models/

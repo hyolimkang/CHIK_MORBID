@@ -1,0 +1,15 @@
+[64 17:12:23] Figure 1 axes: hosp 0.95-5.60, death 0.95-27.00
+[64 17:12:24] Figure 2 axes: hosp 1.800-36.0, death 0.020-14.00; cells shown A = 34, B = 16
+[64 17:12:24] Figure 3 axes: hosp -6 to 10, death -1 to 1.5
+[1] "03_Output/primary_models_H2_H0_final/tables/Table2_Joint_Profiles_FINAL.png"
+# A tibble: 7 × 4
+  check                                      n_compared max_abs_difference pass 
+  <chr>                                           <int>              <dbl> <lgl>
+1 Figure 1 vs Table 2: risk (%)                      16           0        TRUE 
+2 Figure 1 vs Table 2: risk CI (%)                   16           1.78e-15 TRUE 
+3 Figure 1 vs Table 2: RR and CI                     16           0        TRUE 
+4 Figure 3 RD = Table 2 risk(a) - risk(b) (…         12           7.36e-16 TRUE 
+5 Figure 3 risks = Table 2 risks (%)                 12           8.88e-16 TRUE 
+6 Figure 2 cells = canonical age-specific e…         80           0        TRUE 
+7 Table 2 RR = risk / risk(None), unrounded          16           1.11e-14 TRUE 
+[64 17:12:27] done

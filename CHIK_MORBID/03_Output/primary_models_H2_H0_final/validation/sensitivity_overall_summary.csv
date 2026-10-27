@@ -1,0 +1,11 @@
+outcome,model_id,target,max_abs_log_rr_diff,profile_max_diff,n_profiles_rr_excludes_1
+death,death_H0_k20,full,0.008682559728777562,DM+CKD,7
+death,death_fs_global,full,0.3232740225673842,DM+CKD,7
+death,death_fs_original,full,0.3732296631778931,HTN+CKD,7
+hosp,hosp_H0,full,0.23601764743264672,DM+HTN+CKD,7
+hosp,hosp_H2_C1_completeness70,c1,0.0700508896612813,DM+HTN,7
+hosp,hosp_H2_age15plus,age15,0.1027192180963531,HTN+CKD,7
+hosp,hosp_H2_k15,full,0.013438799966509372,DM+HTN,7
+hosp,hosp_H2_k5,full,0.040691572647391136,HTN,7
+hosp,hosp_H2_sp_x0.25,full,0.03666946397044695,DM+HTN,7
+hosp,hosp_H2_sp_x4,full,0.05542518313513666,DM+HTN,7

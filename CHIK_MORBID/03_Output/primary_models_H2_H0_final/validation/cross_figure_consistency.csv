@@ -1,0 +1,8 @@
+check,n_compared,max_abs_difference,pass
+Figure 1 vs Table 2: risk (%),16,0,TRUE
+Figure 1 vs Table 2: risk CI (%),16,1.7763568394002505e-15,TRUE
+Figure 1 vs Table 2: RR and CI,16,0,TRUE
+Figure 3 RD = Table 2 risk(a) - risk(b) (pp),12,7.355227538141662e-16,TRUE
+Figure 3 risks = Table 2 risks (%),12,8.881784197001252e-16,TRUE
+Figure 2 cells = canonical age-specific estimates,80,0,TRUE
+"Table 2 RR = risk / risk(None), unrounded",16,1.1102230246251565e-14,TRUE

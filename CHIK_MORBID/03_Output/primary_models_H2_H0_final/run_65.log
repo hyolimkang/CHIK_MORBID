@@ -1,0 +1,233 @@
+   section
+1  A      
+2  A      
+3  A      
+4  A      
+5  A      
+6  A      
+7  A      
+8  A      
+9  A      
+10 A      
+11 A      
+12 A      
+13 A      
+14 A      
+15 A      
+16 A      
+17 A      
+18 B      
+19 B      
+20 B      
+21 B      
+22 C      
+23 C      
+24 D      
+25 D      
+26 D      
+27 D      
+28 D      
+29 D      
+30 D      
+31 D      
+32 E      
+33 E      
+34 E      
+35 E      
+36 E      
+37 E      
+38 F      
+39 F      
+40 F      
+41 F      
+42 F      
+43 F      
+44 G      
+45 G      
+46 G      
+47 G      
+48 H      
+49 H      
+50 H      
+51 H      
+52 H      
+53 H      
+54 H      
+55 H      
+56 H      
+57 I      
+   check                                                                              
+1  Only primary model IDs in risks                                                    
+2  Only primary model IDs in rrs                                                      
+3  Only primary model IDs in age                                                      
+4  Only primary model IDs in age_rr                                                   
+5  Only primary model IDs in con                                                      
+6  Only primary model IDs in t2                                                       
+7  Only primary model IDs in f1                                                       
+8  Only primary model IDs in f2                                                       
+9  Only primary model IDs in f3                                                       
+10 Hospitalisation estimates from H2; mortality from H0                               
+11 Saved model formula matches specification: hospitalisation_H2                      
+12 Saved model fitted with bam fREML discrete: hospitalisation_H2                     
+13 Coefficient draws match saved model coefficients: hospitalisation_H2               
+14 Saved model formula matches specification: mortality_H0                            
+15 Saved model fitted with bam fREML discrete: mortality_H0                           
+16 Coefficient draws match saved model coefficients: mortality_H0                     
+17 Provenance table lists exactly the two primary models                              
+18 Hospitalisation N = 776,072; events = 25,363                                       
+19 Mortality N = 983,947; deaths = 1,050                                              
+20 Model objects fitted on these cohorts                                              
+21 All cohort reconciliation checks passed (script 62)                                
+22 Eight unique profiles incl. None: hospitalisation_H2                               
+23 Eight unique profiles incl. None: mortality_H0                                     
+24 Overall = weighted mean of age-specific risks (point): hospitalisation_H2          
+25 Overall = weighted mean of age-specific risks (all 4,000 draws): hospitalisation_H2
+26 Identity holds in the published CSVs: hospitalisation_H2                           
+27 Age groups partition the target: hospitalisation_H2                                
+28 Overall = weighted mean of age-specific risks (point): mortality_H0                
+29 Overall = weighted mean of age-specific risks (all 4,000 draws): mortality_H0      
+30 Identity holds in the published CSVs: mortality_H0                                 
+31 Age groups partition the target: mortality_H0                                      
+32 RR = risk / risk(None), unrounded: hospitalisation_H2                              
+33 RR CIs = quantiles of within-draw ratios: hospitalisation_H2                       
+34 RR(None) = 1 in every draw: hospitalisation_H2                                     
+35 RR = risk / risk(None), unrounded: mortality_H0                                    
+36 RR CIs = quantiles of within-draw ratios: mortality_H0                             
+37 RR(None) = 1 in every draw: mortality_H0                                           
+38 RD = 100 x [risk(a) - risk(b)], unrounded: hospitalisation_H2                      
+39 RD CIs from paired draws: hospitalisation_H2                                       
+40 RD of a profile with itself = 0 in every draw: hospitalisation_H2                  
+41 RD = 100 x [risk(a) - risk(b)], unrounded: mortality_H0                            
+42 RD CIs from paired draws: mortality_H0                                             
+43 RD of a profile with itself = 0 in every draw: mortality_H0                        
+44 Figure 1 = Table 2 (risks, RRs, CIs)                                               
+45 Figure 3 RDs = differences of Table 2 risks                                        
+46 Figure 2 cells = canonical age-specific estimates (same models/draws)              
+47 Script 64 cross-figure checks all passed                                           
+48 All draw probabilities in (0, 1), finite: hospitalisation_H2                       
+49 All draw probabilities in (0, 1), finite: mortality_H0                             
+50 Overall risk CIs contain point estimates                                           
+51 Overall RR CIs contain point estimates (non-reference)                             
+52 Age-specific risk CIs contain point estimates                                      
+53 RD CIs contain point estimates                                                     
+54 No missing/infinite values in reported estimates                                   
+55 Monte Carlo: 1,000- vs 4,000-draw CI limits within 5% (profiles with >= 10 events) 
+56 Frequency-weighted = individual-level averaging (rel. diff < 1e-8)                 
+57 Old-vs-new report covers risks, RRs, age-specific risks and RDs                    
+   pass
+1  TRUE
+2  TRUE
+3  TRUE
+4  TRUE
+5  TRUE
+6  TRUE
+7  TRUE
+8  TRUE
+9  TRUE
+10 TRUE
+11 TRUE
+12 TRUE
+13 TRUE
+14 TRUE
+15 TRUE
+16 TRUE
+17 TRUE
+18 TRUE
+19 TRUE
+20 TRUE
+21 TRUE
+22 TRUE
+23 TRUE
+24 TRUE
+25 TRUE
+26 TRUE
+27 TRUE
+28 TRUE
+29 TRUE
+30 TRUE
+31 TRUE
+32 TRUE
+33 TRUE
+34 TRUE
+35 TRUE
+36 TRUE
+37 TRUE
+38 TRUE
+39 TRUE
+40 TRUE
+41 TRUE
+42 TRUE
+43 TRUE
+44 TRUE
+45 TRUE
+46 TRUE
+47 TRUE
+48 TRUE
+49 TRUE
+50 TRUE
+51 TRUE
+52 TRUE
+53 TRUE
+54 TRUE
+55 TRUE
+56 TRUE
+57 TRUE
+   detail                                                                                                                                             
+1  hospitalisation_H2, mortality_H0                                                                                                                   
+2  hospitalisation_H2, mortality_H0                                                                                                                   
+3  hospitalisation_H2, mortality_H0                                                                                                                   
+4  hospitalisation_H2, mortality_H0                                                                                                                   
+5  hospitalisation_H2, mortality_H0                                                                                                                   
+6  hospitalisation_H2, mortality_H0                                                                                                                   
+7  hospitalisation_H2, mortality_H0                                                                                                                   
+8  hospitalisation_H2, mortality_H0                                                                                                                   
+9  hospitalisation_H2, mortality_H0                                                                                                                   
+10                                                                                                                                                    
+11 y ~ core_profile + sex + year + s(uf_residence, bs = "re") + s(age_years, k = 10, bs = "ts") + s(age_years, core_profile, bs = "fs", k = 10, m = 1)
+12 fREML                                                                                                                                              
+13 4000 draws                                                                                                                                         
+14 y ~ core_profile + sex + year + s(uf_residence, bs = "re") + s(age_years, k = 10, bs = "ts")                                                       
+15 fREML                                                                                                                                              
+16 4000 draws                                                                                                                                         
+17                                                                                                                                                    
+18                                                                                                                                                    
+19                                                                                                                                                    
+20                                                                                                                                                    
+21 19 / 19                                                                                                                                            
+22                                                                                                                                                    
+23                                                                                                                                                    
+24 1.39e-16                                                                                                                                           
+25 6.11e-16                                                                                                                                           
+26 1.33e-14                                                                                                                                           
+27                                                                                                                                                    
+28 1.56e-17                                                                                                                                           
+29 4.51e-17                                                                                                                                           
+30 1.55e-15                                                                                                                                           
+31                                                                                                                                                    
+32                                                                                                                                                    
+33                                                                                                                                                    
+34                                                                                                                                                    
+35                                                                                                                                                    
+36                                                                                                                                                    
+37                                                                                                                                                    
+38                                                                                                                                                    
+39                                                                                                                                                    
+40                                                                                                                                                    
+41                                                                                                                                                    
+42                                                                                                                                                    
+43                                                                                                                                                    
+44                                                                                                                                                    
+45                                                                                                                                                    
+46                                                                                                                                                    
+47                                                                                                                                                    
+48                                                                                                                                                    
+49                                                                                                                                                    
+50                                                                                                                                                    
+51                                                                                                                                                    
+52 0 exceptions                                                                                                                                       
+53                                                                                                                                                    
+54                                                                                                                                                    
+55 max 0.030; sparse profiles max 0.053 (reported only)                                                                                               
+56 3.33e-16                                                                                                                                           
+57 204 rows; 85 flagged material                                                                                                                      
+[65] 57 / 57 checks passed

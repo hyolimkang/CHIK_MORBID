@@ -1,0 +1,15 @@
+"condition","hosp","mort","fams","limits","role"
+"Diabetes mellitus","Supported. Adjusted positive associations in national (BRA-A) and Ceará (BRA-B) SINAN data; age-adjusted RR 1.39 (1.06–1.84) in an external cohort","Supported. Adjusted positive associations in BRA-A and BRA-B; crude, imprecise in BRA-C; pooled OR 2.86; no association in Réunion and imprecise in an ICU cohort","H: 3 (1 ext.)
+M: 5 (2 ext.)","Positive mortality evidence rests on SINAN-overlapping data; external studies null or imprecise","Core"
+"Hypertension","Supported. Adjusted positive associations in BRA-A and BRA-B; null in the external cohort (age-adjusted RR 1.00, 0.63–1.57)","Limited‡. Adjusted positive associations in BRA-A and BRA-B, crude in BRA-C; pooled OR 3.10; not among death factors in two studies; imprecise in an ICU cohort","H: 3 (1 ext.)
+M: 4 (1 ext.)","Single external hospitalisation study null; mortality evidence inconsistent; Réunion signal is severe disease, not death","Core"
+"Chronic kidney disease","Supported. Adjusted positive associations in BRA-A and BRA-B (Ceará aOR 4.56); age-adjusted RR 1.52 (1.19–1.94) in an external cohort","Supported. Adjusted positive associations in BRA-A, BRA-B and BRA-C (aOR 12.77, 2.75–59.4); pooled OR 5.81 (1.30–25.99); no external mortality estimate","H: 3 (1 ext.)
+M: 3 (0 ext.)","Mortality evidence entirely from Brazilian SINAN-overlapping families; wide CIs; 'kidney disease' labels vary","Core"
+"Hepatopathy","Insufficient. Assessed in BRA-A and BRA-B; no condition-specific association extracted","Limited. Adjusted positive association in BRA-A only (aOR 1.78, 1.06–2.99; in-hospital death)","H: 0 (0 ext.)
+M: 1 (0 ext.)","Single overlapping family; outcome-specific; broad SINAN category","Secondary"
+"Autoimmune disease","Limited. Adjusted positive association in BRA-A only (aOR 1.54, 1.30–1.82)","Insufficient. Adjusted aOR 2.77 (1.68–4.56) in one BRA-A study; not reported in the other†","H: 1 (0 ext.)
+M: 1 (0 ext.)","Single overlapping family; heterogeneous category","Secondary"
+"Haematological disease","Insufficient. Assessed in BRA-A and BRA-B; no condition-specific association extracted","Insufficient. Assessed in BRA-A; no condition-specific association extracted","H: 0 (0 ext.)
+M: 0 (0 ext.)","No extractable estimates; heterogeneous category","Not prioritised"
+"Peptic ulcer disease","Insufficient. Assessed in BRA-A and BRA-B; no condition-specific association extracted","Insufficient. Assessed in BRA-A; no condition-specific association extracted","H: 0 (0 ext.)
+M: 0 (0 ext.)","No extractable estimates","Not prioritised"

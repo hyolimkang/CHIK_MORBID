@@ -1,0 +1,25 @@
+check,pass,detail
+All 15 main-table models found in sources,TRUE,15
+"Hospitalisation candidates share cohort N = 776,072 / 25,363",TRUE,
+"Mortality candidates share cohort N = 983,947 / 1,050",TRUE,
+All main-table models converged,TRUE,
+"Same adjustment (sex, year, state RE) in every formula",TRUE,
+Recomputed ΔAIC equals stored ΔAIC,TRUE,
+Hospitalisation cohort reconciliation file passes (script 52),TRUE,
+"Mortality cohort check file: 983,947 / 1,050",TRUE,
+H2 hospitalisation ΔAIC ≈ −241,TRUE,-241.08
+H2 hospitalisation adult Wald p < 0.001,TRUE,4.66e-10
+"Hospitalisation adult interaction p < 0.001 in H1, H2 and all H1/H2 basis and smoothing variants",TRUE,"H1,H2,H2_k15,H1_k15,H1_k5,H1_sp_x0.25,H1_sp_x4,H2_k5,H2_sp_x0.25,H2_sp_x4"
+H0 (k = 20) improves AIC far less than interaction models (hosp),TRUE,
+Mortality fs_original and fs_global have lower AIC than H0,TRUE,
+Mortality fs_original and fs_global adult Wald p > 0.05,TRUE,
+"Mortality fs_k5 retained in main table (worse AIC, adult p ≈ 0.001)",TRUE,
+Wald p in diagnostics file = Wald p in test file (mortality),TRUE,
+Wald p in comparison file = Wald p in test file (hospitalisation),TRUE,
+Task anchors match source AIC (|diff| < 0.01),TRUE,
+Primary H2 refit (script 62) reproduces script 52 H2 AIC,TRUE,
+Primary H0 refit (script 62) reproduces script 46 H0 AIC,TRUE,
+"Total deaths in support file = 1,050; cases = 983,947",TRUE,
+DM+CKD 4 deaths; CKD 12 deaths,TRUE,
+"35 non-reference strata: 12 with 1-9 deaths, 12 with 0 deaths",TRUE,cells 35; ge10 11; s1_9 12; zero 12
+Death counts by age × profile identical to cohort rebuilt in script 62,TRUE,

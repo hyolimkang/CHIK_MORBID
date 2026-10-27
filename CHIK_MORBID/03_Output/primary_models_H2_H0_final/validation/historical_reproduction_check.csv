@@ -1,0 +1,4 @@
+check,n_values,max_abs_rel_diff_point,max_abs_rel_diff_ci
+"H2 age-specific risks vs script 52 H2 (same spec, bam)",40,4.884981308350689e-15,0.05477122502445941
+H0 mortality overall risks vs script 28 cache (gam REML vs bam fREML),8,9.899886261255375e-5,0.057214988778693354
+"H0 mortality RDs vs script 56 (same spec, bam)",6,0,0.35965340289203707

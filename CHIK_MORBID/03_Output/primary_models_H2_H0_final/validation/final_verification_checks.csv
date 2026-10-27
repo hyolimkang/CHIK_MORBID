@@ -1,0 +1,58 @@
+section,check,pass,detail
+A,Only primary model IDs in risks,TRUE,"hospitalisation_H2, mortality_H0"
+A,Only primary model IDs in rrs,TRUE,"hospitalisation_H2, mortality_H0"
+A,Only primary model IDs in age,TRUE,"hospitalisation_H2, mortality_H0"
+A,Only primary model IDs in age_rr,TRUE,"hospitalisation_H2, mortality_H0"
+A,Only primary model IDs in con,TRUE,"hospitalisation_H2, mortality_H0"
+A,Only primary model IDs in t2,TRUE,"hospitalisation_H2, mortality_H0"
+A,Only primary model IDs in f1,TRUE,"hospitalisation_H2, mortality_H0"
+A,Only primary model IDs in f2,TRUE,"hospitalisation_H2, mortality_H0"
+A,Only primary model IDs in f3,TRUE,"hospitalisation_H2, mortality_H0"
+A,Hospitalisation estimates from H2; mortality from H0,TRUE,
+A,Saved model formula matches specification: hospitalisation_H2,TRUE,"y ~ core_profile + sex + year + s(uf_residence, bs = ""re"") + s(age_years, k = 10, bs = ""ts"") + s(age_years, core_profile, bs = ""fs"", k = 10, m = 1)"
+A,Saved model fitted with bam fREML discrete: hospitalisation_H2,TRUE,fREML
+A,Coefficient draws match saved model coefficients: hospitalisation_H2,TRUE,4000 draws
+A,Saved model formula matches specification: mortality_H0,TRUE,"y ~ core_profile + sex + year + s(uf_residence, bs = ""re"") + s(age_years, k = 10, bs = ""ts"")"
+A,Saved model fitted with bam fREML discrete: mortality_H0,TRUE,fREML
+A,Coefficient draws match saved model coefficients: mortality_H0,TRUE,4000 draws
+A,Provenance table lists exactly the two primary models,TRUE,
+B,"Hospitalisation N = 776,072; events = 25,363",TRUE,
+B,"Mortality N = 983,947; deaths = 1,050",TRUE,
+B,Model objects fitted on these cohorts,TRUE,
+B,All cohort reconciliation checks passed (script 62),TRUE,19 / 19
+C,Eight unique profiles incl. None: hospitalisation_H2,TRUE,
+C,Eight unique profiles incl. None: mortality_H0,TRUE,
+D,Overall = weighted mean of age-specific risks (point): hospitalisation_H2,TRUE,1.39e-16
+D,"Overall = weighted mean of age-specific risks (all 4,000 draws): hospitalisation_H2",TRUE,6.11e-16
+D,Identity holds in the published CSVs: hospitalisation_H2,TRUE,1.33e-14
+D,Age groups partition the target: hospitalisation_H2,TRUE,
+D,Overall = weighted mean of age-specific risks (point): mortality_H0,TRUE,1.56e-17
+D,"Overall = weighted mean of age-specific risks (all 4,000 draws): mortality_H0",TRUE,4.51e-17
+D,Identity holds in the published CSVs: mortality_H0,TRUE,1.55e-15
+D,Age groups partition the target: mortality_H0,TRUE,
+E,"RR = risk / risk(None), unrounded: hospitalisation_H2",TRUE,
+E,RR CIs = quantiles of within-draw ratios: hospitalisation_H2,TRUE,
+E,RR(None) = 1 in every draw: hospitalisation_H2,TRUE,
+E,"RR = risk / risk(None), unrounded: mortality_H0",TRUE,
+E,RR CIs = quantiles of within-draw ratios: mortality_H0,TRUE,
+E,RR(None) = 1 in every draw: mortality_H0,TRUE,
+F,"RD = 100 x [risk(a) - risk(b)], unrounded: hospitalisation_H2",TRUE,
+F,RD CIs from paired draws: hospitalisation_H2,TRUE,
+F,RD of a profile with itself = 0 in every draw: hospitalisation_H2,TRUE,
+F,"RD = 100 x [risk(a) - risk(b)], unrounded: mortality_H0",TRUE,
+F,RD CIs from paired draws: mortality_H0,TRUE,
+F,RD of a profile with itself = 0 in every draw: mortality_H0,TRUE,
+G,"Figure 1 = Table 2 (risks, RRs, CIs)",TRUE,
+G,Figure 3 RDs = differences of Table 2 risks,TRUE,
+G,Figure 2 cells = canonical age-specific estimates (same models/draws),TRUE,
+G,Script 64 cross-figure checks all passed,TRUE,
+H,"All draw probabilities in (0, 1), finite: hospitalisation_H2",TRUE,
+H,"All draw probabilities in (0, 1), finite: mortality_H0",TRUE,
+H,Overall risk CIs contain point estimates,TRUE,
+H,Overall RR CIs contain point estimates (non-reference),TRUE,
+H,Age-specific risk CIs contain point estimates,TRUE,0 exceptions
+H,RD CIs contain point estimates,TRUE,
+H,No missing/infinite values in reported estimates,TRUE,
+H,"Monte Carlo: 1,000- vs 4,000-draw CI limits within 5% (profiles with >= 10 events)",TRUE,max 0.030; sparse profiles max 0.053 (reported only)
+H,Frequency-weighted = individual-level averaging (rel. diff < 1e-8),TRUE,3.33e-16
+I,"Old-vs-new report covers risks, RRs, age-specific risks and RDs",TRUE,204 rows; 85 flagged material

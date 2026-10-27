@@ -1,0 +1,20 @@
+check,outcome,expected,observed,pass
+Eligible core-3 population,both,1074796,1074796,TRUE
+Cohort N,hosp,776072,776072,TRUE
+Events,hosp,25363,25363,TRUE
+Cohort N,death,983947,983947,TRUE
+Events,death,1050,1050,TRUE
+"EVOLUCAO mapping (2 = death; 1,3 = no; other = NA)",death,TRUE,TRUE,TRUE
+"Eight mutually exclusive profiles, none missing",hosp,8,8,TRUE
+Profile counts sum to cohort N,hosp,776072,776072,TRUE
+Profile event counts sum to events,hosp,25363,25363,TRUE
+Profile N match Table 1,hosp,"668110,12791,67094,1379,24338,262,828,1270","668110,12791,67094,1379,24338,262,828,1270",TRUE
+Profile events match validated profile caches,hosp,"20134,598,2756,124,1447,27,131,146","20134,598,2756,124,1447,27,131,146",TRUE
+Age groups partition cohort,hosp,776072,776072,TRUE
+"Eight mutually exclusive profiles, none missing",death,8,8,TRUE
+Profile counts sum to cohort N,death,983947,983947,TRUE
+Profile event counts sum to events,death,1050,1050,TRUE
+Profile N match Table 1,death,"856342,15302,79512,1640,28379,313,924,1535","856342,15302,79512,1640,28379,313,924,1535",TRUE
+Profile events match validated profile caches,death,"522,53,228,12,181,4,22,28","522,53,228,12,181,4,22,28",TRUE
+Age groups partition cohort,death,983947,983947,TRUE
+Mutual exclusivity: dm+htn+ckd recode reproduces profile,both,TRUE,TRUE,TRUE

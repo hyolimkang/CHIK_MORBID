@@ -1,0 +1,11 @@
+model_id,outcome,target,formula,smoothing,n,events,aic,total_edf,n_warnings
+hosp_H0,hosp,full,"y ~ core_profile + sex + year + s(uf_residence, bs = 're') + s(age_years, k = 10, bs = 'ts')",estimated (fREML),776072,25363,204543.15360028838,51.32441254030724,0
+hosp_H2_k5,hosp,full,"y ~ core_profile + sex + year + s(uf_residence, bs = 're') + s(age_years, k = 10, bs = 'ts') + s(age_years, core_profile, bs = 'fs', k = 5, m = 1)",estimated (fREML),776072,25363,204329.52571697577,69.90361272880618,1
+hosp_H2_k15,hosp,full,"y ~ core_profile + sex + year + s(uf_residence, bs = 're') + s(age_years, k = 15, bs = 'ts') + s(age_years, core_profile, bs = 'fs', k = 15, m = 1)",estimated (fREML),776072,25363,204284.2585319049,89.4268868393065,1
+hosp_H2_sp_x0.25,hosp,full,"y ~ core_profile + sex + year + s(uf_residence, bs = 're') + s(age_years, k = 10, bs = 'ts') + s(age_years, core_profile, bs = 'fs', k = 10, m = 1)",fixed,776072,25363,204301.54827463452,92.98534326846797,1
+hosp_H2_sp_x4,hosp,full,"y ~ core_profile + sex + year + s(uf_residence, bs = 're') + s(age_years, k = 10, bs = 'ts') + s(age_years, core_profile, bs = 'fs', k = 10, m = 1)",fixed,776072,25363,204319.54104490744,71.21024851068923,1
+hosp_H2_age15plus,hosp,age15,"y ~ core_profile + sex + year + s(uf_residence, bs = 're') + s(age_years, k = 10, bs = 'ts') + s(age_years, core_profile, bs = 'fs', k = 10, m = 1)",estimated (fREML),690232,18768,162419.84645005208,70.10371291287491,1
+hosp_H2_C1_completeness70,hosp,c1,"y ~ core_profile + sex + year + s(uf_residence, bs = 're') + s(age_years, k = 10, bs = 'ts') + s(age_years, core_profile, bs = 'fs', k = 10, m = 1)",estimated (fREML),510051,15971,128854.72027843876,72.38514134598906,1
+death_fs_original,death,full,"y ~ core_profile + sex + year + s(uf_residence, bs = 're') + s(age_years, core_profile, bs = 'fs', k = 10)",estimated (fREML),983947,1050,13723.81362655963,66.38012540019604,0
+death_fs_global,death,full,"y ~ core_profile + sex + year + s(uf_residence, bs = 're') + s(age_years, k = 10, bs = 'ts') + s(age_years, core_profile, bs = 'fs', k = 10, m = 1)",estimated (fREML),983947,1050,13705.888109844473,66.72431984514435,1
+death_H0_k20,death,full,"y ~ core_profile + sex + year + s(uf_residence, bs = 're') + s(age_years, k = 20, bs = 'ts')",estimated (fREML),983947,1050,13735.419309744726,47.52332689953236,0
